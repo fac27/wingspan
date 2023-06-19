@@ -1,3 +1,5 @@
+BEGIN;
+
 CREATE TABLE IF NOT EXISTS birds (
   name TEXT PRIMARY KEY,  --bird's common name
   scientific_name TEXT,    --scientific name
@@ -15,3 +17,5 @@ CREATE TABLE IF NOT EXISTS birds (
   location TEXT[],          --continent bird lives in
   expansion TEXT          --main game/expansion pack(Core, European, or Oceania)
 );
+
+COMMIT;
