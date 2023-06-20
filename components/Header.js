@@ -1,13 +1,11 @@
 // import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import { birdcageIcon } from "../public/images/birdcageIcon.png";
-import { GlobalStyle } from "../public/fonts/fonts";
+import  birdcageIcon  from "../public/images/birdcageIcon.png"
 
 export default function Header() {
   return (
     <>
-      <GlobalStyle />
       <StyledHeader>
         <StyledHeading>Wingspan</StyledHeading>
         <StyledNav>
