@@ -1,27 +1,19 @@
 import Image from "next/image";
 
-export default function BirdCard({
-  handleAdd,
-  habitat,
-  scientific_name,
-  wingspan,
-  name,
-  img,
-}) {
+export default function BirdCard({ handleAdd, bird }) {
   return (
     <div>
-      <h2>{name}</h2>
-      <Image src={img} alt="bird image" width={123} height={123}></Image>
-      <p>{scientific_name}</p>
-      <p>{habitat}</p>
-      <p>{wingspan}</p>
-      <button
-        onClick={() =>
-          handleAdd({ habitat, scientific_name, wingspan, name, img })
-        }
-      >
-        Add
-      </button>
+      <h2>{bird.name}</h2>
+      <Image
+        src={bird.img_path}
+        alt="bird image"
+        width={123}
+        height={123}
+      ></Image>
+      <p>{bird.scientific_name}</p>
+      <p>{bird.habitat}</p>
+      <p>{bird.wingspan}</p>
+      <button onClick={() => handleAdd(bird)}>Add</button>
     </div>
   );
 }
