@@ -15,7 +15,13 @@ export default function BirdCard({
       <p>{scientific_name}</p>
       <p>{habitat}</p>
       <p>{wingspan}</p>
-      <button onClick={handleAdd}>Add</button>
+      <button
+        onClick={() =>
+          handleAdd({ habitat, scientific_name, wingspan, name, img })
+        }
+      >
+        Add
+      </button>
     </div>
   );
 }
