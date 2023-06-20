@@ -8,7 +8,7 @@ export default function BirdCagePage() {
     <>
       <Head />
       {/* <Header/> */}
-      <BirdCage/>
+      <BirdCage />
     </>
   );
 }
