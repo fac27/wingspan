@@ -1,10 +1,10 @@
 import BirdProfileCard from "../components/birdProfileCard";
 
-export default function BirdProfilePage() {
+export default function BirdProfilePage({ handleAdd }) {
   return (
     <>
       {/* <Header/> */}
-      <BirdProfileCard />
+      <BirdProfileCard handleAdd={handleAdd} />
     </>
   );
 }

@@ -12,17 +12,13 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allBirdsData, setBirdcage, birdcage }) {
-  const handleAdd = () => {
-    setBirdcage({ bird: "bird" });
-    console.log({ birdcage, setBirdcage });
-  };
-
+export default function Home({ allBirdsData, handleAdd, birdcage }) {
   return (
     <>
       <Head>
         <title>Wingspan</title>
       </Head>
+      <p>{birdcage.bird}</p>
       <ViewBirds handleAdd={handleAdd} allBirdsData={allBirdsData} />
     </>
   );

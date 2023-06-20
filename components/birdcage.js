@@ -1,6 +1,6 @@
 import BirdCard from "./birdCard.js";
 
-export default function BirdCage({ tempStyles }) {
+export default function BirdCage({ tempStyles, birdcage, setBirdcage }) {
   // {birdName, birdImage}
   return (
     <>
