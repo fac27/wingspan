@@ -1,9 +1,9 @@
 import Image from "next/image";
 import kestrel from "../public/images/American_Kestrel.png";
 
-export default function BirdCard({ tempStyles }) {
+export default function BirdCard({ handleAdd, allBirdsData }) {
   return (
-    <div style={tempStyles}>
+    <div>
       <h2>Flamingo</h2>
       <Image
         // src={allBirdsData.img_path}   -- I assume it would be soemthing like this or just children.im_path?
@@ -12,9 +12,10 @@ export default function BirdCard({ tempStyles }) {
         width={123}
         height={123}
       />
+      <p>Scientific name</p>
       <p>Wingspan</p>
       <p>Habitat</p>
-      <p></p>
+      <button onClick={handleAdd}>Add</button>
     </div>
   );
 }

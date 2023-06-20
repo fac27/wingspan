@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function BirdProfileCard() {
+export default function BirdProfileCard({ handleAdd }) {
   return (
     <div>
       <h2>Flamingo</h2>
@@ -8,6 +8,7 @@ export default function BirdProfileCard() {
       <p>
         jsdgjlksjdglksjdlgkjldskgjlksjglkjsdlgjlskjdglksjdglkjslkjgdlkjlksdjglksdjglkjsgdl
       </p>
+      <button onClick={handleAdd}>Add</button>
     </div>
   );
 }
