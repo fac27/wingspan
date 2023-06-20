@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS birds (
   nest_type TEXT,         --nest type(platform, bowl, cavity, ground, or star)
   wingspan INTEGER,       --bird wingspan length in centimeters
   trivia TEXT,            --bird trivia fact
-  location TEXT,          --continent bird lives in
+  location TEXT,        --continent bird lives in
   img_path TEXT
 );
 
