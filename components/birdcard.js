@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function BirdCard({tempStyles}) {
+export default function BirdCard({ tempStyles }) {
   return (
     <div style={tempStyles}>
       <h2>Flamingo</h2>
