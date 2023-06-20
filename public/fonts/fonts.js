@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
-import BebasNeueRegularWoff from '/public/images/fonts/BebasNeue-Regular.woff';
+import BebasNeueRegularWoff from "/public/images/fonts/BebasNeue-Regular.woff";
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {

@@ -7,7 +7,7 @@ import { GlobalStyle } from "../public/fonts/fonts";
 export default function Header() {
   return (
     <>
-    <GlobalStyle/>
+      <GlobalStyle />
       <StyledHeader>
         <StyledHeading>Wingspan</StyledHeading>
         <StyledNav>
@@ -17,7 +17,12 @@ export default function Header() {
     
    )}  */}
           <div>
-            <Image src={birdcageIcon} alt="birdcage icon" width="35" height="41" />
+            <Image
+              src={birdcageIcon}
+              alt="birdcage icon"
+              width="35"
+              height="41"
+            />
           </div>
         </StyledNav>
       </StyledHeader>
