@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 export default function BirdCard({ handleAdd, allBirdsData }) {
-  console.log(allBirdsData)
   return (
     <div>
       <h2>Flamingo</h2>
