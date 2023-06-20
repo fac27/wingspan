@@ -1,6 +1,7 @@
 import Head from "next/head";
 import getAllBirds from "../lib/birds";
 import ViewBirds from "../components/viewBirds";
+import Header from "../components/Header";
 
 export async function getStaticProps() {
   const allBirdsData = getAllBirds();
