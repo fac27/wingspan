@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Head from "next/head";
 import { getAllBirds, getAllBirdIds } from "../lib/birds";
 import ViewBirds from "../components/viewBirds";
+import Header from "../components/header";
 
 export async function getStaticProps() {
   const allBirdsData = getAllBirds();
@@ -13,15 +15,14 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allBirdsData, test }) {
+export default function Home({ allBirdsData, handleAdd, birdcage }) {
   return (
     <>
       <Head>
         <title>Homepage</title>
       </Head>
-
-      {console.log(test)}
-      <ViewBirds />
+      <Header />
+      <ViewBirds handleAdd={handleAdd} allBirdsData={allBirdsData} />
     </>
   );
 }

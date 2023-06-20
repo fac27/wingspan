@@ -1,13 +1,21 @@
 import Image from "next/image";
 
-export default function BirdCard({ tempStyles }) {
+export default function BirdCard({
+  handleAdd,
+  habitat,
+  scientific_name,
+  wingspan,
+  name,
+  img,
+}) {
   return (
-    <div style={tempStyles}>
-      <h2>Flamingo</h2>
-      <Image src="/someBirdImage" alt="bird image" width={123} height={123} />
-      <p>Wingspan</p>
-      <p>Habitat</p>
-      <p></p>
+    <div>
+      <h2>{name}</h2>
+      <Image src={img} alt="bird image" width={123} height={123}></Image>
+      <p>{scientific_name}</p>
+      <p>{habitat}</p>
+      <p>{wingspan}</p>
+      <button onClick={handleAdd}>Add</button>
     </div>
   );
 }

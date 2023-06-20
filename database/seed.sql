@@ -22,7 +22,7 @@ INSERT INTO BIRDS VALUES
 
     (7, 'American Goldfinch', 'Spinus tristis', 3, 'grassland', 'bowl', 23,
     'Goldfinches breed late, after the milkweed and thistle have gone to seed.',
-    'North America'),
+    'North America','/images/American_Goldfinch.png'),
 
     (8, 'American Kestrel', 'Falco sparverius', 5, 'grassland', 'cavity', 56,
     'Kestrels track rodents by their urine, and will cache surplus kills for later.',
