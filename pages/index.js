@@ -13,9 +13,7 @@ export async function getStaticProps() {
   };
 }
 
-
-export default function Home({ allBirdsData }) {
-
+export default function Home({ allBirdsData, handleAdd, birdcage }) {
   return (
     <>
       <Head>
