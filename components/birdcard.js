@@ -1,20 +1,20 @@
 import Image from "next/image";
-import kestrel from "../public/images/American_Kestrel.png";
 
-export default function BirdCard({ handleAdd, allBirdsData }) {
+export default function BirdCard({
+  handleAdd,
+  habitat,
+  scientific_name,
+  wingspan,
+  name,
+  img,
+}) {
   return (
     <div>
-      <h2>Flamingo</h2>
-      <Image
-        // src={allBirdsData.img_path}   -- I assume it would be soemthing like this or just children.im_path?
-        src={kestrel}
-        alt="bird image"
-        width={123}
-        height={123}
-      />
-      <p>Scientific name</p>
-      <p>Wingspan</p>
-      <p>Habitat</p>
+      <h2>{name}</h2>
+      <Image src={img} alt="bird image" width={123} height={123}></Image>
+      <p>{scientific_name}</p>
+      <p>{habitat}</p>
+      <p>{wingspan}</p>
       <button onClick={handleAdd}>Add</button>
     </div>
   );
