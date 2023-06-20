@@ -1,11 +1,13 @@
 // import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import birdcage from "../images/birdcage.png";
+import { birdcageIcon } from "../public/images/birdcageIcon.png";
+import { GlobalStyle } from "../public/fonts/fonts";
 
 export default function Header() {
   return (
     <>
+    <GlobalStyle/>
       <StyledHeader>
         <StyledHeading>Wingspan</StyledHeading>
         <StyledNav>
@@ -15,7 +17,7 @@ export default function Header() {
     
    )}  */}
           <div>
-            <Image src={birdcage} alt="birdcage icon" width="35" height="41" />
+            <Image src={birdcageIcon} alt="birdcage icon" width="35" height="41" />
           </div>
         </StyledNav>
       </StyledHeader>
@@ -34,7 +36,7 @@ const StyledHeader = styled.header`
 
 const StyledHeading = styled.h1`
   margin-left: 20px;
-  font-family: "BebasNeue Regular", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   line-height: 19px;
 `;
 
