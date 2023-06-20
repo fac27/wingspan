@@ -1,15 +1,13 @@
 import Image from "next/image";
 
-export default function BirdCard({ handleAdd, allBirdsData }) {
-  console.log(allBirdsData)
+export default function BirdCard({ handleAdd, habitat, scientific_name, wingspan, name  }) {
   return (
     <div>
-      <h2>Flamingo</h2>
+      <h2>{name}</h2>
       <Image src="/someBirdImage" alt="bird image" width={123} height={123} />
-      <p>Scientific name</p>
-      <p>Wingspan</p>
-      <p>Habitat</p>
-      <button onClick={handleAdd}>Add</button>
+      <p>{scientific_name}</p>
+      <p>{habitat}</p>
+      <p>{wingspan}</p>
     </div>
   );
 }
