@@ -1,8 +1,7 @@
 import Image from "next/image";
-import kestrel from '../public/images/American_Kestrel.png';
+import kestrel from "../public/images/American_Kestrel.png";
 
-
-export default function BirdCard({ tempStyles}) {
+export default function BirdCard({ tempStyles }) {
   return (
     <div style={tempStyles}>
       <h2>Flamingo</h2>
