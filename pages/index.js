@@ -1,5 +1,6 @@
 import Head from "next/head";
 import getAllBirds from "../lib/birds";
+import ViewBirds from "../components/viewBirds";
 
 export async function getStaticProps() {
   const allBirdsData = getAllBirds();
@@ -16,7 +17,7 @@ export default function Home() {
       <Head>
         <title>Wingspan</title>
       </Head>
-      <p>Hello, Nextjs</p>
+      <ViewBirds />
     </>
   );
 }
