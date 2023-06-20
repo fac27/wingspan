@@ -1,16 +1,14 @@
-import BirdCard from "./birdCard";
+import BirdCard from "./birdcard";
 
-export default function ViewBirds({tempStyles}) {
-  // {birdName, birdImage}
-
+export default function ViewBirds() {
   return (
     <>
       {/* <Header/> */}
       <div>
-      <BirdCard tempStyles={tempStyles}></BirdCard>
-      <BirdCard></BirdCard>
-      <BirdCard></BirdCard>
-      <BirdCard></BirdCard>
+        <BirdCard></BirdCard>
+        <BirdCard></BirdCard>
+        <BirdCard></BirdCard>
+        <BirdCard></BirdCard>
       </div>
     </>
   );
