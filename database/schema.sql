@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS birds (
   wingspan INTEGER,       --bird wingspan length in centimeters
   trivia TEXT,            --bird trivia fact
   location TEXT          --continent bird lives in
+  img_path TEXT
 );
 
 COMMIT;
