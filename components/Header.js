@@ -1,7 +1,7 @@
 // import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import  birdcageIcon  from "../public/images/birdcageIcon.png"
+import birdcageIcon from "../public/images/birdcageIcon.png";
 
 export default function Header() {
   return (
