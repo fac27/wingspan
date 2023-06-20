@@ -25,7 +25,7 @@ export default function Home({ allBirdsData }) {
       <Head>
         <title>Wingspan</title>
       </Head>
-      <Header/>
+      <Header />
       <ViewBirds handleAdd={handleAdd} allBirdsData={allBirdsData} />
     </>
   );

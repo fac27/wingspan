@@ -13,6 +13,7 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
             scientific_name={bird.scientific_name}
             wingspan={bird.wingspan}
             name={bird.name}
+            img={bird.img_path}
           ></BirdCard>
         ))}
       </div>
