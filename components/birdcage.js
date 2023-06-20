@@ -1,9 +1,9 @@
-import Birdcard from "./birdcard";
+import BirdCard from "./birdCard.js";
 
 export default function BirdCage() {
   return (
     <>
-      <Birdcard />
+      <BirdCard />
       <div>
         <p>Total wingspan</p>
       </div>
