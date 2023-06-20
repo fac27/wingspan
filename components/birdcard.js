@@ -1,4 +1,5 @@
 import Image from "next/image";
+import kestrel from "../public/images/American_Kestrel.png";
 
 export default function BirdCard({
   handleAdd,
