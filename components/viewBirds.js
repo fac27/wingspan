@@ -1,4 +1,4 @@
-import BirdCard from "./birdCard";
+import BirdCard from "./birdcard";
 
 export default function ViewBirds({ tempStyles }) {
   // {birdName, birdImage}
