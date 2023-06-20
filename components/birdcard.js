@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-export default function BirdCard({ handleAdd, habitat, scientific_name, wingspan, name  }) {
+export default function BirdCard({
+  handleAdd,
+  habitat,
+  scientific_name,
+  wingspan,
+  name,
+}) {
   return (
     <div>
       <h2>{name}</h2>
