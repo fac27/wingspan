@@ -1,7 +1,8 @@
-import BirdCard from "./birdCard";
+import BirdCard from "../components/birdCard";
 import Head from "next/head";
 
-export default function HomePage() { // {birdName, birdImage}
+export default function HomePage() {
+  // {birdName, birdImage}
 
   return (
     <>
