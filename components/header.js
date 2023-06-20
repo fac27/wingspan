@@ -37,11 +37,12 @@ const StyledHeader = styled.header`
 `;
 
 const StyledHeading = styled.h1`
-  margin-left: 20px;
+  margin-left: 40px;
   font-family: "Bebas Neue", sans-serif;
   line-height: 19px;
 `;
 
 const StyledNav = styled.nav`
-  margin-right: 20px;
+  margin-right: 40px;
 `;
+

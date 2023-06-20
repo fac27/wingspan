@@ -1,10 +1,11 @@
 import BirdCard from "./birdcard.js";
+import { styled } from "styled-components";
 
 export default function ViewBirds({ handleAdd, allBirdsData }) {
   return (
     <>
       {/* <Header/> */}
-      <div>
+      <BirdContainer>
         {allBirdsData.map((bird, index) => (
           <BirdCard
             handleAdd={handleAdd}
@@ -16,7 +17,17 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
             img={bird.img_path}
           ></BirdCard>
         ))}
-      </div>
+      </BirdContainer>
     </>
   );
 }
+
+const BirdContainer = styled.div`
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+margin-left:auto;
+margin-right:auto;
+width: 90%;
+
+`
