@@ -1,7 +1,7 @@
 // import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import birdcage from '../images/birdcage.png'
+import birdcage from "../images/birdcage.png";
 
 export default function Header() {
   return (
@@ -15,12 +15,7 @@ export default function Header() {
     
    )}  */}
           <div>
-            <Image
-              src={birdcage}
-              alt="birdcage icon"
-              width="35"
-              height="41"
-            />
+            <Image src={birdcage} alt="birdcage icon" width="35" height="41" />
           </div>
         </StyledNav>
       </StyledHeader>
