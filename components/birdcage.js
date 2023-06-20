@@ -1,9 +1,10 @@
-import Birdcard from "./birdcard";
+import BirdCard from "./birdCard.js";
 
-export default function BirdCage() {
+export default function BirdCage({tempStyles}) {
+  // {birdName, birdImage}
   return (
     <>
-      <Birdcard />
+      <BirdCard tempStyles={tempStyles}/>
       <div>
         <p>Total wingspan</p>
       </div>
