@@ -1,16 +1,13 @@
 import BirdCard from "./birdCard";
 
-export default function ViewBirds({ tempStyles }) {
-  // {birdName, birdImage}
+export default function ViewBirds({ handleAdd, allBirdsData }) {
 
   return (
     <>
       {/* <Header/> */}
       <div>
-        <BirdCard tempStyles={tempStyles}></BirdCard>
-        <BirdCard></BirdCard>
-        <BirdCard></BirdCard>
-        <BirdCard></BirdCard>
+        <BirdCard handleAdd={handleAdd} allBirdsData={allBirdsData}></BirdCard>
+        
       </div>
     </>
   );
