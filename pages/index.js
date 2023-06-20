@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>Wingspan</title>
       </Head>
-      <Header/>
+      <Header />
 
       <p>Hello, Nextjs</p>
     </>
