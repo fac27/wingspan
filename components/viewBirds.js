@@ -1,4 +1,4 @@
-import BirdCard from "./birdcard";
+import BirdCard from "./birdcard.js";
 
 export default function ViewBirds({ handleAdd, allBirdsData }) {
   return (

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import kestrel from "../public/images/American_Kestrel.png";
 
 export default function BirdCard({
   handleAdd,
@@ -7,9 +6,8 @@ export default function BirdCard({
   scientific_name,
   wingspan,
   name,
-  img
+  img,
 }) {
-  console.log({img})
   return (
     <div>
       <h2>{name}</h2>
