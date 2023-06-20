@@ -23,11 +23,10 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
 }
 
 const BirdContainer = styled.div`
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-margin-left:auto;
-margin-right:auto;
-width: 90%;
-
-`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+`;

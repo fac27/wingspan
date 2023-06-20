@@ -45,4 +45,3 @@ const StyledHeading = styled.h1`
 const StyledNav = styled.nav`
   margin-right: 40px;
 `;
-

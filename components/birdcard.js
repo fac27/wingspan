@@ -51,8 +51,8 @@ const BirdName = styled.h2`
 
 const Wingspan = styled.p`
   position: absolute;
-  bottom: .5rem;
-  color:#967a71;
+  bottom: 0.5rem;
+  color: #967a71;
 `;
 
 const AddButton = styled.button`
