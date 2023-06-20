@@ -1,7 +1,8 @@
 BEGIN;
 
 CREATE TABLE IF NOT EXISTS birds (
-  name TEXT PRIMARY KEY,  --bird's common name
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE,  --bird's common name
   scientific_name TEXT,    --scientific name
   points INTEGER,         --point value(0-9)
   habitat TEXT,        --habitat bird can be played(forest, grassland, and/or wetland)
