@@ -1,10 +1,16 @@
 import Image from "next/image";
 
 export default function BirdCard() {
+
+  const tempStyles = {
+    'border': '1px solid black',
+    'width': '300px'
+  }
+
   return (
-    <div>
-      <Image src="some file path" alt="bird image"/>
-      <h2>bird name</h2>
+    <div style={tempStyles}>
+      <h2>Flamingo</h2>
+      <Image src="/someBirdImage" alt="bird image" width={123} height={123}/>
     </div>
   );
 }
