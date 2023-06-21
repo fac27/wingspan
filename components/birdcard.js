@@ -28,9 +28,9 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
         </p>
       )}
       {birdcage && (
-        <RemoveButton onClick={() => handleRemove(bird)}>-</RemoveButton>
+        <RemoveButton data-testid="remove-button" onClick={() => handleRemove(bird)}>-</RemoveButton>
       )}
-      <AddButton onClick={() => handleAdd(bird, 1)}>+</AddButton>
+      <AddButton data-testid="add-button" onClick={() => handleAdd(bird, 1)}>+</AddButton>
     </Card>
   );
 }
