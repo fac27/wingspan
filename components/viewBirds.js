@@ -3,7 +3,7 @@ import BirdCard from "./birdcard.js";
 import { styled } from "styled-components";
 
 export default function ViewBirds({ handleAdd, allBirdsData }) {
-/////////////////////////////////HABITAT
+  /////////////////////////////////HABITAT
   const allHabitats = allBirdsData.flatMap((bird) => bird.habitat.split(", "));
   const uniqueHabitats = [...new Set(allHabitats)].filter(
     (habitat) => habitat !== "forest, grassland, wetland"
@@ -14,7 +14,7 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
     setSelectedHabitat(habitat);
   };
 
-///////////////////////////////WINGSPAN    
+  ///////////////////////////////WINGSPAN
   const wingspanArr = [];
   allBirdsData.forEach((bird) => wingspanArr.push(bird.wingspan));
   const largestWingspan = Math.max(...wingspanArr);
@@ -23,17 +23,16 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
   const [minWingspan, setMinWingspan] = useState(smallestWingspan);
   const updateMinWingspan = (e) => {
     return setMinWingspan(e.target.value);
-  }
+  };
 
-////////////////////////////APPLY FILTERS
+  ////////////////////////////APPLY FILTERS
   const filteredBirds = allBirdsData.filter((bird) => {
     const habitatFilter = selectedHabitat
-    ?  bird.habitat.split(", ").includes(selectedHabitat)
-    : allBirdsData;
+      ? bird.habitat.split(", ").includes(selectedHabitat)
+      : allBirdsData;
     const wingspanFilter = bird.wingspan > minWingspan;
     return habitatFilter && wingspanFilter;
   });
-
 
   return (
     <>
@@ -55,8 +54,14 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
           </HabitatButton>
         ))}
         <WingspanFilter>
-          <p>Wingspan</p>
-          <input type="range" step={((largestWingspan - 20) - smallestWingspan) / 8} min={0} max={largestWingspan} onChange={updateMinWingspan}></input>
+          <WingspanLabel>Wingspan</WingspanLabel>
+          <input
+            type="range"
+            step={(largestWingspan - 20 - smallestWingspan) / 8}
+            min={0}
+            max={largestWingspan}
+            onChange={updateMinWingspan}
+          ></input>
         </WingspanFilter>
       </Filter>
       <BirdContainer>
@@ -99,10 +104,15 @@ border-radius: 10px;
 background-color: #a4e2c5;
 font-family: "Bebas Neue", sans-serif;
 letter-spacing: 2px;
-width:150px
-padding: 10px;
 text-align: center;
+margin-left: 10px;
+margin-top: 10px;
+height: 60px;
 `;
+
+const WingspanLabel = styled.p`
+margin-top: 10px;
+margin-bottom: 0px`
 
 const Filter = styled.form`
   display: flex;
