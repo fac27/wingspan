@@ -2,7 +2,7 @@ import Image from "next/image";
 import { styled } from "styled-components";
 import Link from "next/link";
 
-export default function BirdCard({ handleAdd, bird }) {
+export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
   return (
     <Card>
       <BirdName>{bird.name}</BirdName>
@@ -14,12 +14,22 @@ export default function BirdCard({ handleAdd, bird }) {
           height={123}
         ></Image>
       </Link>
-      <p>{bird.scientific_name}</p>
-      <HabitatCard>
-        <HabitatIcon>H</HabitatIcon>
-        <HabitatText>{bird.habitat}</HabitatText>
-      </HabitatCard>
-      <Wingspan>{bird.wingspan}</Wingspan>
+      {!birdcage && <p>{bird.scientific_name}</p>}
+      {!birdcage && (
+        <HabitatCard>
+          <HabitatIcon>H</HabitatIcon>
+          <HabitatText>{bird.habitat}</HabitatText>
+        </HabitatCard>
+      )}
+      {!birdcage && <Wingspan>{bird.wingspan}</Wingspan>}
+      {birdcage && (
+        <p>
+          <strong>Quantity: {bird.quantity}</strong>
+        </p>
+      )}
+      {birdcage && (
+        <RemoveButton onClick={() => handleRemove(bird)}>-</RemoveButton>
+      )}
       <AddButton onClick={() => handleAdd(bird, 1)}>+</AddButton>
     </Card>
   );
@@ -77,22 +87,11 @@ const AddButton = styled.button`
     box-shadow: 2px 5px #967a71;
   }
 `;
-// const StyledP = styled.p`
-//   width: 60px;
-//   height: 60px;
-//   border-radius: 50%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   overflow: hidden;
-//   text-align: center;
-//   background: #276547;
-//   transition: opacity 0.3s;
 
-//   &:hover {
-//     opacity: 1;
-//   }
-// `;
+const RemoveButton = styled(AddButton)`
+  right: 0;
+  left: 20px;
+`;
 
 const HabitatIcon = styled.div`
   background: #276547;
