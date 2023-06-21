@@ -20,7 +20,6 @@ export default function MyApp({ Component, pageProps }) {
   };
 
   useEffect(() => {
-    console.log("useEffect");
     setTotalBirdCount(() => {
       return birdcage.reduce((total, bird) => {
         return total + bird.quantity;
