@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Head from "next/head";
 import { getAllBirds, getAllBirdIds } from "../lib/birds";
 import ViewBirds from "../components/viewBirds";

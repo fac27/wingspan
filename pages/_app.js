@@ -1,12 +1,20 @@
 import { useState } from "react";
 
 export default function MyApp({ Component, pageProps }) {
-  const handleAdd = () => {
+  const handleAdd = (bird, quant) => {
     setBirdcage((prevCage) => {
-      return { ...prevCage, bird: prevCage.bird + 1 };
+      const birdInCage = prevCage.find((b) => b.id === bird.id);
+
+      if (birdInCage) {
+        return prevCage.map((b) =>
+          b.id === bird.id ? { ...b, quantity: b.quantity + quant } : b
+        );
+      } else {
+        return [...prevCage, { ...bird, quantity: quant }];
+      }
     });
   };
-  const [birdcage, setBirdcage] = useState({ bird: 0 });
+  const [birdcage, setBirdcage] = useState([]);
   const props = { ...pageProps, birdcage, setBirdcage, handleAdd };
 
   return <Component {...props} />;

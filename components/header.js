@@ -1,26 +1,26 @@
 import Image from "next/image";
 import { styled } from "styled-components";
 import birdcageIcon from "../public/images/birdcageIcon.png";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <>
       <StyledHeader>
-        <StyledHeading>Wingspan</StyledHeading>
+        <Link href="/">
+          <StyledHeading>Wingspan</StyledHeading>
+        </Link>
         <StyledNav>
-          {/* {!home &&(
-    
-   <Link href="/">HomePage</Link>
-    
-   )}  */}
-          <div>
+          <Link href="/bird-cage">
+            {/* <div> */}
             <Image
               src={birdcageIcon}
               alt="birdcage icon"
               width="35"
               height="41"
             />
-          </div>
+            {/* </div> */}
+          </Link>
         </StyledNav>
       </StyledHeader>
     </>
@@ -37,11 +37,11 @@ const StyledHeader = styled.header`
 `;
 
 const StyledHeading = styled.h1`
-  margin-left: 20px;
+  margin-left: 40px;
   font-family: "Bebas Neue", sans-serif;
   line-height: 19px;
 `;
 
 const StyledNav = styled.nav`
-  margin-right: 20px;
+  margin-right: 40px;
 `;
