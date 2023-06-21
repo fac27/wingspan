@@ -20,6 +20,15 @@ export default function MyApp({ Component, pageProps }) {
   };
 
   useEffect(() => {
+    const storedCage = JSON.parse(window.localStorage.getItem("birdcage"));
+    setBirdcage(storedCage ? storedCage : []);
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("birdcage", JSON.stringify(birdcage));
+  }, [birdcage]);
+
+  useEffect(() => {
     setTotalBirdCount(() => {
       return birdcage.reduce((total, bird) => {
         return total + bird.quantity;
@@ -38,7 +47,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component {...props} />;
+      <Component {...props} />
     </>
   );
 }

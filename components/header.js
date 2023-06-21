@@ -17,6 +17,7 @@ export default function Header({ totalBirdCount }) {
               alt="birdcage icon"
               width="35"
               height="41"
+              data-testid="bird-cage"
             />
           </Link>
           <CageNumber>{totalBirdCount}</CageNumber>

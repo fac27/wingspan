@@ -21,16 +21,16 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
           <HabitatText>{bird.habitat}</HabitatText>
         </HabitatCard>
       )}
-      {!birdcage && <Wingspan>{bird.wingspan}</Wingspan>}
+      <Wingspan birdcage={birdcage}>Wingspan: {bird.wingspan}cm</Wingspan>
       {birdcage && (
         <p>
           <strong>Quantity: {bird.quantity}</strong>
         </p>
       )}
       {birdcage && (
-        <RemoveButton onClick={() => handleRemove(bird)}>-</RemoveButton>
+        <RemoveButton data-testid="remove-button" onClick={() => handleRemove(bird)}>-</RemoveButton>
       )}
-      <AddButton onClick={() => handleAdd(bird, 1)}>+</AddButton>
+      <AddButton data-testid="add-button" onClick={() => handleAdd(bird, 1)}>+</AddButton>
     </Card>
   );
 }
@@ -61,7 +61,7 @@ const BirdName = styled.h2`
 `;
 
 const Wingspan = styled.p`
-  position: absolute;
+  position: ${({ birdcage }) => (!birdcage ? "absolute" : "relative")};
   bottom: 0.5rem;
   color: #967a71;
 `;
