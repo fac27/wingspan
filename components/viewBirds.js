@@ -3,6 +3,7 @@ import BirdCard from "./birdcard.js";
 import { styled } from "styled-components";
 
 export default function ViewBirds({ handleAdd, allBirdsData }) {
+/////////////////////////////////HABITAT
   const allHabitats = allBirdsData.flatMap((bird) => bird.habitat.split(", "));
   const uniqueHabitats = [...new Set(allHabitats)].filter(
     (habitat) => habitat !== "forest, grassland, wetland"
@@ -13,20 +14,26 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
     setSelectedHabitat(habitat);
   };
 
-  const filteredBirds = selectedHabitat
-    ? allBirdsData.filter((bird) =>
-        bird.habitat.split(", ").includes(selectedHabitat)
-      )
-    : allBirdsData;
-
+///////////////////////////////WINGSPAN    
   const wingspanArr = [];
   allBirdsData.forEach((bird) => wingspanArr.push(bird.wingspan));
-  console.log(wingspanArr);
+  const largestWingspan = Math.max(...wingspanArr);
+  const smallestWingspan = Math.min(...wingspanArr);
 
-  const largestWingspan = Math.ceil(Math.max(...wingspanArr));
-  const smallestWingspan = Math.floor(Math.min(...wingspanArr));
+  const [minWingspan, setMinWingspan] = useState(smallestWingspan);
+  const updateMinWingspan = (e) => {
+    return setMinWingspan(e.target.value);
+  }
 
-  console.log(largestWingspan, smallestWingspan);
+////////////////////////////APPLY FILTERS
+  const filteredBirds = allBirdsData.filter((bird) => {
+    const habitatFilter = selectedHabitat
+    ?  bird.habitat.split(", ").includes(selectedHabitat)
+    : allBirdsData;
+    const wingspanFilter = bird.wingspan > minWingspan;
+    return habitatFilter && wingspanFilter;
+  });
+
 
   return (
     <>
@@ -49,7 +56,7 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
         ))}
         <WingspanFilter>
           <p>Wingspan</p>
-          <input type="range" min="23" max="190"></input>
+          <input type="range" step={((largestWingspan - 20) - smallestWingspan) / 8} min={0} max={largestWingspan} onChange={updateMinWingspan}></input>
         </WingspanFilter>
       </Filter>
       <BirdContainer>
