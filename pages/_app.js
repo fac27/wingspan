@@ -1,16 +1,16 @@
 import { useState } from "react";
 
 export default function MyApp({ Component, pageProps }) {
-  const handleAdd = (bird) => {
+  const handleAdd = (bird, quant) => {
     setBirdcage((prevCage) => {
       const birdInCage = prevCage.find((b) => b.id === bird.id);
 
       if (birdInCage) {
         return prevCage.map((b) =>
-          b.id === bird.id ? { ...b, quantity: b.quantity + 1 } : b
+          b.id === bird.id ? { ...b, quantity: b.quantity + quant } : b
         );
       } else {
-        return [...prevCage, { ...bird, quantity: 1 }];
+        return [...prevCage, { ...bird, quantity: quant }];
       }
     });
   };
