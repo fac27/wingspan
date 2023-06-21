@@ -2,7 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { getAllBirdIds, getBirdData } from "../../lib/birds";
-import Header from "../../components/header"
+import Header from "../../components/header";
 import { styled } from "styled-components";
 
 export async function getStaticPaths() {
@@ -37,7 +37,7 @@ export default function Bird({ birdData, handleAdd, birdcage }) {
       <Head>
         <title>{birdData.scientific_name}</title>
       </Head>
-      <Header/>
+      <Header />
       <Card>
         <h2>{birdData.name}</h2>
         <Image
@@ -103,7 +103,7 @@ const AddToBasket = styled.button`
     cursor: pointer;
     box-shadow: 2px 5px #967a71;
   }
-`
+`;
 
 const Card = styled.div`
   position: relative;

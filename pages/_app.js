@@ -16,6 +16,7 @@ export default function MyApp({ Component, pageProps }) {
     });
   };
 
+  const [selectedHabitat, setSelectedHabitat] = useState(null);
   const [birdcage, setBirdcage] = useState([]);
   const props = { ...pageProps, birdcage, setBirdcage, handleAdd };
 
