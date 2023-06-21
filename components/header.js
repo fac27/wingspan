@@ -42,15 +42,14 @@ const StyledHeading = styled.h1`
   line-height: 19px;
   letter-spacing: 4px;
   :visited {
-  color: pink;
-}
+    color: pink;
+  }
 `;
 const LogoLink = styled(Link)`
   :visited {
-  color: pink;
-}
-
-`
+    color: pink;
+  }
+`;
 
 const StyledNav = styled.nav`
   margin-right: 40px;
