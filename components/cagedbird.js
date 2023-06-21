@@ -9,8 +9,8 @@ export default function CagedBird({ handleAdd, bird, handleRemove }) {
       <p>
         <strong>Quantity: {bird.quantity}</strong>
       </p>
-      <button onClick={() => handleRemove(bird)}>Remove</button>
-      <button onClick={() => handleAdd(bird, 1)}>Add</button>
+      <button onClick={() => handleRemove(bird)}>-</button>
+      <button onClick={() => handleAdd(bird, 1)}>+</button>
     </div>
   );
 }
