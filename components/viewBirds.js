@@ -100,19 +100,20 @@ const HabitatButton = styled.button`
 `;
 
 const WingspanFilter = styled.div`
-border-radius: 10px;
-background-color: #a4e2c5;
-font-family: "Bebas Neue", sans-serif;
-letter-spacing: 2px;
-text-align: center;
-margin-left: 10px;
-margin-top: 10px;
-height: 60px;
+  border-radius: 10px;
+  background-color: #a4e2c5;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 10px;
+  height: 60px;
 `;
 
 const WingspanLabel = styled.p`
-margin-top: 10px;
-margin-bottom: 0px`
+  margin-top: 10px;
+  margin-bottom: 0px;
+`;
 
 const Filter = styled.form`
   display: flex;
