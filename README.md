@@ -17,7 +17,7 @@ This is the week 5 project of the FAC software developer apprenticeship. A Nextj
 
 3. Install npm packages
 
-```npm install```
+```npm install --force```
 
 4. Seed the database
 
