@@ -75,16 +75,16 @@ const AddButton = styled.button`
   }
 `;
 const StyledP = styled.p`
-  width: 60px; 
-  height: 60px; 
-  border-radius: 50%; 
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   text-align: center;
   background: #276547;
-  transition: opacity 0.3s; 
+  transition: opacity 0.3s;
 
   &:hover {
     opacity: 1;

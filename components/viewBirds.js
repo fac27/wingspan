@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 
 export default function ViewBirds({ handleAdd, allBirdsData }) {
   const uniqueHabitats = [...new Set(allBirdsData.map((bird) => bird.habitat))];
- 
 
   return (
     <>
