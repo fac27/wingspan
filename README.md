@@ -1,9 +1,11 @@
-# wingspan
+# Wingspan
 
-A Next.js application for collecting birds
-inspiration came from the boardgame [Wingspan](https://stonemaiergames.com/games/wingspan/)
+## About
 
-# Installation
+This is the week 5 project of the FAC software developer apprenticeship. A Nextjs full-stack application for collecting birds inspired by the game [wingspan](https://stonemaiergames.com/games/wingspan/).
+
+
+## Installation
 
 1. Clone the repo
 
@@ -11,35 +13,32 @@ inspiration came from the boardgame [Wingspan](https://stonemaiergames.com/games
 git clone https://github.com/fac27/wingspan
 ```
 
-2. cd into the repo
+2. Cd into the repo
 
 ```
 cd wingspan
 ```
 
-3. install npm packages
+3. Install npm packages
 
 ```
 npm install
 ```
 
-5.
+4. Seed the database
 
 ```
 node database/seed.js
 ```
 
-5.
+5. Run the development server
 
 ```
 npm run dev
 ```
 
-6. navigate to http://localhost:3000/ in the browser
+6. Navigate to http://localhost:3000/ in the browser
 
-## About
-
-This is for the week 5 project of the FAC software developer apprenticeship. A Nextjs full-stack application. Ours is inspired by the game [wingspan](https://stonemaiergames.com/games/wingspan/).
 
 ### User Stories
 
@@ -50,7 +49,7 @@ This is for the week 5 project of the FAC software developer apprenticeship. A N
 
 ## Design
 
-Wireframes were done using figma, and you can see them [HERE](https://www.figma.com/file/iiODlCs5mHMrSqUgyhGMW3/Homepage?type=design).
+Wireframes were created using figma and can be found [HERE](https://www.figma.com/file/iiODlCs5mHMrSqUgyhGMW3/Homepage?type=design).
 
 <img width="300" alt="Screenshot 2023-06-21 at 14 14 31" src="https://github.com/fac27/wingspan/assets/98838967/bef4fbae-ea10-4ef2-91d8-03ed2c0bf3cb">
 
@@ -58,11 +57,27 @@ Wireframes were done using figma, and you can see them [HERE](https://www.figma.
 
 <img width="550" alt="db_diagram" src="https://github.com/fac27/wingspan/assets/23071495/19c9c84f-59a0-43a4-8e1a-50d00ba61410">
 
-## What doesn't work
+## Known issues
 
 - Deployment
-  This is because Next.js's Vercel doesn't play nice with sqlite
+  This is because Next.js's Vercel doesn't play nice with sqlite (a requirement of the project)
 
-- Persistant storage
 
-Packages we used: styled componenets, babel
+## Testing
+
+E2E tests were created with [Cypress](https://docs.cypress.io/guides/overview/why-cypress)
+
+To run the tests:
+
+Make sure development server is running
+```npm run dev```
+
+Open cypress application 
+```npx cypress open```
+
+Select E2E Testing in the application
+
+Select chrome as your browser
+
+Run Tests
+
