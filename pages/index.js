@@ -1,20 +1,18 @@
 import Head from "next/head";
-import { getAllBirds, getAllBirdIds } from "../lib/birds";
+import { getAllBirds } from "../lib/birds";
 import ViewBirds from "../components/viewBirds";
 import Header from "../components/header";
 
 export async function getStaticProps() {
   const allBirdsData = getAllBirds();
-  const test = getAllBirdIds();
   return {
     props: {
       allBirdsData,
-      test,
     },
   };
 }
 
-export default function Home({ allBirdsData, handleAdd, birdcage }) {
+export default function Home({ allBirdsData, handleAdd }) {
   return (
     <>
       <Head>
