@@ -13,12 +13,12 @@ export default function Header() {
         <StyledNav>
           <Link href="/bird-cage">
             {/* <div> */}
-              <Image
-                src={birdcageIcon}
-                alt="birdcage icon"
-                width="35"
-                height="41"
-              />
+            <Image
+              src={birdcageIcon}
+              alt="birdcage icon"
+              width="35"
+              height="41"
+            />
             {/* </div> */}
           </Link>
         </StyledNav>
@@ -42,7 +42,6 @@ const StyledHeading = styled.h1`
   line-height: 19px;
   letter-spacing: 4px;
 `;
-
 
 const StyledNav = styled.nav`
   margin-right: 40px;
