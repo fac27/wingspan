@@ -2,7 +2,7 @@ import Layout from "../components/layout";
 import { getAllBirds } from "../lib/birds";
 import ViewBirds from "../components/viewBirds";
 import Header from "../components/header";
-import {totalBirdCount} from '../pages/bird-cage'
+import { totalBirdCount } from "../pages/bird-cage";
 
 export async function getStaticProps() {
   const allBirdsData = getAllBirds();

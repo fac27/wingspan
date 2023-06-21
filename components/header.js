@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import birdcageIcon from "../public/images/birdcageIcon.png";
 import Link from "next/link";
 
-export default function Header({totalBirdCount}) {
+export default function Header({ totalBirdCount }) {
   return (
     <>
       <StyledHeader>
@@ -61,20 +61,19 @@ const CageIcon = styled(Image)`
     opacity: 60%;
     cursor: pointer;
   }
-`
+`;
 
 const StyledNav = styled.nav`
   margin-right: 40px;
 `;
 
 const CageNumber = styled.span`
-position: absolute;
-top: 90px;
-right: 50px;
-font-size: 20px;
-z-index: 0;
-color: white;
-opacity: 80%;
-font-family: "Bebas Neue", sans-serif;;
-
-`
+  position: absolute;
+  top: 90px;
+  right: 50px;
+  font-size: 20px;
+  z-index: 0;
+  color: white;
+  opacity: 80%;
+  font-family: "Bebas Neue", sans-serif;
+`;

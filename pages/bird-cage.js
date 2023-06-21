@@ -21,11 +21,11 @@ export default function BirdCagePage({ birdcage, setBirdcage, handleAdd }) {
     }, 0);
   }
 
-  const totalBirds = ()=>{
+  const totalBirds = () => {
     return birdcage.reduce((total, bird) => {
       return total + bird.quantity;
     }, 0);
-  }
+  };
   const total = totalWingspan();
   const totalBirdCount = totalBirds();
   return (
