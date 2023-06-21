@@ -74,22 +74,22 @@ const AddButton = styled.button`
     box-shadow: 2px 5px #967a71;
   }
 `;
-const StyledP = styled.p`
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-align: center;
-  background: #276547;
-  transition: opacity 0.3s;
+// const StyledP = styled.p`
+//   width: 60px;
+//   height: 60px;
+//   border-radius: 50%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   overflow: hidden;
+//   text-align: center;
+//   background: #276547;
+//   transition: opacity 0.3s;
 
-  &:hover {
-    opacity: 1;
-  }
-`;
+//   &:hover {
+//     opacity: 1;
+//   }
+// `;
 
 const HabitatIcon = styled.div`
   background: #276547;

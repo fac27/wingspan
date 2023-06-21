@@ -16,17 +16,26 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
 
   return (
     <>
-      <form>
+      <Filter>
+        <HabitatButton
+          key="all"
+          onClick={() => handleClick(null)}
+          type="button"
+        >
+          All
+        </HabitatButton>
         {uniqueHabitats.map((habitat) => (
-          <button
+          <HabitatButton
             key={habitat}
             onClick={() => handleClick(habitat)}
             type="button"
           >
             {habitat}
-          </button>
+          </HabitatButton>
         ))}
-      </form>
+
+        
+      </Filter>
       <BirdContainer>
         {filteredBirds.map((bird) => (
           <BirdCard handleAdd={handleAdd} key={bird.id} bird={bird}></BirdCard>
@@ -44,3 +53,26 @@ const BirdContainer = styled.div`
   margin-right: auto;
   width: 90%;
 `;
+const HabitatButton = styled.button`
+  border-radius: 10px;
+  background-color: #a4e2c5;
+  text-decoration: none;
+  border-color: white;
+  padding: 10px;
+  border-color: white;
+  border: solid white;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
+  margin-left: 10px;
+
+  cursor: pointer;
+  &:hover {
+    box-shadow: 2px 2px #967a71;
+  }
+`;
+
+const Filter = styled.form`
+display: flex;
+align-items: center;
+justify-content: center;
+`
