@@ -2,6 +2,26 @@
 
 A Next.js application for collecting birds
 
+# Installation
+1.
+```
+git clone https://github.com/fac27/wingspan
+```
+2.
+```
+cd wingspan
+```
+3.
+```
+node database/seed.js
+```
+4.
+```
+npm run dev
+```
+5. navigate to http://localhost:3000/ in the browser
+
+   
 ## About
 
 This is for the week 5 project of the FAC software developer apprenticeship. A Nextjs full-stack application. Ours is inspired by the game [wingspan](https://stonemaiergames.com/games/wingspan/). 
