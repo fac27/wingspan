@@ -16,11 +16,6 @@ describe("wingspan routes", () => {
   });
 });
 
-
-
-
-
-
 /*describe("test wingspan", () => {
   it("displays page populated with bird cards", () => {
     cy.visit("http://localhost:3000/");
