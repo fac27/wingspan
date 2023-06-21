@@ -21,14 +21,21 @@ export default function BirdCagePage({ birdcage, setBirdcage, handleAdd }) {
       return total + bird.wingspan * bird.quantity;
     }, 0);
   }
+
+  const totalBirds = ()=>{
+    return birdcage.reduce((total, bird) => {
+      return total + bird.quantity;
+    }, 0);
+  }
   const total = totalWingspan();
+  const totalBirdCount = totalBirds();
   return (
     <>
       <Head>
         <title>Bird Cage</title>
       </Head>
 
-      <Header />
+      <Header totalBirdCount = {totalBirdCount}/>
       {birdcage.map((bird) => {
         return (
           <BirdCard

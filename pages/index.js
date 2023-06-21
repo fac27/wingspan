@@ -2,6 +2,7 @@ import Head from "next/head";
 import { getAllBirds } from "../lib/birds";
 import ViewBirds from "../components/viewBirds";
 import Header from "../components/header";
+import {totalBirdCount} from '../pages/bird-cage'
 
 export async function getStaticProps() {
   const allBirdsData = getAllBirds();
@@ -12,10 +13,10 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allBirdsData, handleAdd }) {
+export default function Home({ allBirdsData, handleAdd, totalBirdCount }) {
   return (
     <>
-      <Head>
+      <Head >
         <title>Homepage</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -23,7 +24,7 @@ export default function Home({ allBirdsData, handleAdd }) {
           rel="stylesheet"
         />
       </Head>
-      <Header />
+      <Header totalBirdCount={totalBirdCount}/>
       <ViewBirds handleAdd={handleAdd} allBirdsData={allBirdsData} />
     </>
   );
