@@ -1,23 +1,26 @@
 import Image from "next/image";
 import { styled } from "styled-components";
+import Link from 'next/link';
 
 export default function BirdCard({ handleAdd, bird }) {
   return (
     <Card>
       <BirdName>{bird.name}</BirdName>
+      <Link href={"/birds/" + bird.id}>
       <Image
         src={bird.img_path}
         alt="bird image"
         width={123}
         height={123}
       ></Image>
+      </Link>
       <p>{bird.scientific_name}</p>
       <HabitatCard>
         <HabitatIcon>H</HabitatIcon>
         <HabitatText>{bird.habitat}</HabitatText>
       </HabitatCard>
       <Wingspan>{bird.wingspan}</Wingspan>
-      <AddButton onClick={() => handleAdd(bird)}>+</AddButton>
+      <AddButton onClick={() => handleAdd(bird, 1)}>+</AddButton>
     </Card>
   );
 }

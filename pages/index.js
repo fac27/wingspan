@@ -1,6 +1,4 @@
-import { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { getAllBirds, getAllBirdIds } from "../lib/birds";
 import ViewBirds from "../components/viewBirds";
 import Header from "../components/header";
@@ -23,7 +21,6 @@ export default function Home({ allBirdsData, handleAdd, birdcage }) {
         <title>Homepage</title>
       </Head>
       <Header />
-      <Link href="/bird-cage">bird-cage</Link>
       <ViewBirds handleAdd={handleAdd} allBirdsData={allBirdsData} />
     </>
   );
