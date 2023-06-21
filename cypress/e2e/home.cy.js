@@ -8,12 +8,11 @@ describe("test wingspan", () => {
   });
 });
 
-
 describe("test wingspan", () => {
   it("displays page populated with bird cards", () => {
     cy.visit("http://localhost:3000/");
-    cy.get('ViewBirds').should('exist');
-  })
+    cy.get("ViewBirds").should("exist");
+  });
 });
 
 // To run the test:
