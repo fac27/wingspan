@@ -1,10 +1,8 @@
 import Head from "next/head";
 import Header from "../components/header";
-import BirdCard from "../components/birdcard";
+import CagedBird from "../components/cagedbird";
 
-export default function BirdCagePage({ birdcage, setBirdcage }) {
-  // {birdName, birdImage}
-
+export default function BirdCagePage({ birdcage, handleAdd }) {
   return (
     <>
       <Head>
@@ -12,7 +10,10 @@ export default function BirdCagePage({ birdcage, setBirdcage }) {
       </Head>
 
       <Header />
-      <BirdCard />
+      {birdcage.map((bird) => {
+        return <CagedBird handleAdd={handleAdd} bird={bird} key={bird.id} />;
+        //return <CagedBird bird={bird} key={bird.id} />;
+      })}
       <div>
         <p>Total wingspan</p>
       </div>
