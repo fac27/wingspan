@@ -1,9 +1,8 @@
 import { useState } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import { getAllBirdIds, getBirdData } from "../../lib/birds";
-import Header from "../../components/header";
 import { styled } from "styled-components";
+import Layout from "../../components/layout";
 
 export async function getStaticPaths() {
   const paths = getAllBirdIds();
@@ -33,11 +32,7 @@ export default function Bird({ birdData, handleAdd, birdcage }) {
     setQuant((prevQuant) => prevQuant - 1);
   };
   return (
-    <>
-      <Head>
-        <title>{birdData.scientific_name}</title>
-      </Head>
-      <Header />
+    <Layout>
       <Card>
         <h2>{birdData.name}</h2>
         <Image
@@ -62,7 +57,7 @@ export default function Bird({ birdData, handleAdd, birdcage }) {
           Add to Basket
         </AddToBasket>
       </Card>
-    </>
+    </Layout>
   );
 }
 
