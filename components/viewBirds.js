@@ -19,17 +19,14 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
       )
     : allBirdsData;
 
-    const wingspanArr = [];
-    allBirdsData.forEach(bird => wingspanArr.push(bird.wingspan))
-    console.log(wingspanArr)
+  const wingspanArr = [];
+  allBirdsData.forEach((bird) => wingspanArr.push(bird.wingspan));
+  console.log(wingspanArr);
 
-    const largestWingspan = Math.ceil(Math.max(...wingspanArr));
-    const smallestWingspan = Math.floor(Math.min(...wingspanArr));
+  const largestWingspan = Math.ceil(Math.max(...wingspanArr));
+  const smallestWingspan = Math.floor(Math.min(...wingspanArr));
 
-    console.log(largestWingspan, smallestWingspan)
-
-
-
+  console.log(largestWingspan, smallestWingspan);
 
   return (
     <>
@@ -51,8 +48,9 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
           </HabitatButton>
         ))}
         <WingspanFilter>
-          <p>Wingspan</p><input type="range" min="23" max="190"></input>
-          </WingspanFilter>
+          <p>Wingspan</p>
+          <input type="range" min="23" max="190"></input>
+        </WingspanFilter>
       </Filter>
       <BirdContainer>
         {filteredBirds.map((bird) => (
@@ -97,7 +95,7 @@ letter-spacing: 2px;
 width:150px
 padding: 10px;
 text-align: center;
-`
+`;
 
 const Filter = styled.form`
   display: flex;
