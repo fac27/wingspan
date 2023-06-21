@@ -17,7 +17,9 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
       {!birdcage && <p>{bird.scientific_name}</p>}
       {!birdcage && (
         <HabitatCard>
-          <HabitatIcon>H</HabitatIcon>
+          <HabitatIcon habitat={bird.habitat}>
+            <img src="/images/habitat.png"></img>
+          </HabitatIcon>
           <HabitatText>{bird.habitat}</HabitatText>
         </HabitatCard>
       )}
@@ -28,9 +30,16 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
         </p>
       )}
       {birdcage && (
-        <RemoveButton data-testid="remove-button" onClick={() => handleRemove(bird)}>-</RemoveButton>
+        <RemoveButton
+          data-testid="remove-button"
+          onClick={() => handleRemove(bird)}
+        >
+          -
+        </RemoveButton>
       )}
-      <AddButton data-testid="add-button" onClick={() => handleAdd(bird, 1)}>+</AddButton>
+      <AddButton data-testid="add-button" onClick={() => handleAdd(bird, 1)}>
+        +
+      </AddButton>
     </Card>
   );
 }
@@ -94,7 +103,12 @@ const RemoveButton = styled(AddButton)`
 `;
 
 const HabitatIcon = styled.div`
-  background: #276547;
+  background: ${(props) =>
+    props.habitat === "forest"
+      ? "#276547"
+      : props.habitat === "grassland"
+      ? "#aa624d;"
+      : "#5372a0"};
   color: #fff;
   height: 45px;
   width: 45px;
@@ -103,6 +117,7 @@ const HabitatIcon = styled.div`
   border-radius: 50%;
   cursor: pointer;
 `;
+
 const HabitatText = styled.p`
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
@@ -120,4 +135,9 @@ const HabitatCard = styled.div`
     padding: 8px 8px;
     border-radius: 4px;
   }
+`;
+
+const leafIcon = styled.img`
+  height: 45px;
+  width: 45px;
 `;
