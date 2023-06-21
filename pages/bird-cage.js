@@ -16,6 +16,13 @@ export default function BirdCagePage({ birdcage, setBirdcage, handleAdd }) {
       );
     });
   };
+
+  function totalWingspan() {
+    return birdcage.reduce((total, bird) => {
+      return total + bird.wingspan * bird.quantity;
+    }, 0);
+  }
+  const total = totalWingspan();
   return (
     <>
       <Head>
@@ -34,7 +41,7 @@ export default function BirdCagePage({ birdcage, setBirdcage, handleAdd }) {
         );
       })}
       <div>
-        <p>Total wingspan</p>
+        <p>Total Wingspan: {total}</p>
       </div>
     </>
   );
