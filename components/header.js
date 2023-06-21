@@ -18,6 +18,7 @@ export default function Header() {
               alt="birdcage icon"
               width="35"
               height="41"
+              data-testid="bird-cage"
             />
             {/* </div> */}
           </Link>

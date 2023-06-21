@@ -42,7 +42,7 @@ export default function BirdCagePage({ birdcage, setBirdcage, handleAdd }) {
       })}
 
       <div>
-        <p>Total Wingspan: {total}</p>
+        <p data-testid="wingpsan-total">Total Wingspan: {total}</p>
       </div>
     </>
   );
