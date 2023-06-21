@@ -1,6 +1,4 @@
-import { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { getAllBirds, getAllBirdIds } from "../lib/birds";
 import ViewBirds from "../components/viewBirds";
 import Header from "../components/header";
@@ -21,9 +19,13 @@ export default function Home({ allBirdsData, handleAdd, birdcage }) {
     <>
       <Head>
         <title>Homepage</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <Header />
-      <Link href="/bird-cage">bird-cage</Link>
       <ViewBirds handleAdd={handleAdd} allBirdsData={allBirdsData} />
     </>
   );
