@@ -3,7 +3,8 @@ import BirdCard from "./birdcard.js";
 import { styled } from "styled-components";
 
 export default function ViewBirds({ handleAdd, allBirdsData }) {
-  const uniqueHabitats = [...new Set(allBirdsData.map((bird) => bird.habitat))];
+  const allHabitats = allBirdsData.flatMap((bird) => bird.habitat.split(", "));
+  const uniqueHabitats = [...new Set(allHabitats)].filter(habitat => habitat !== 'forest, grassland, wetland');
   const [selectedHabitat, setSelectedHabitat] = useState(null);
 
   const handleClick = (habitat) => {
@@ -11,8 +12,8 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
   };
 
   const filteredBirds = selectedHabitat
-    ? allBirdsData.filter((bird) => bird.habitat === selectedHabitat)
-    : allBirdsData;
+  ? allBirdsData.filter((bird) => bird.habitat.split(', ').includes(selectedHabitat))
+  : allBirdsData;
 
   return (
     <>
