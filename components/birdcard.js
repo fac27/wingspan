@@ -17,7 +17,7 @@ export default function BirdCard({ handleAdd, bird }) {
         <HabitatText>{bird.habitat}</HabitatText>
       </HabitatCard>
       <Wingspan>{bird.wingspan}</Wingspan>
-      <AddButton onClick={() => handleAdd(bird)}>+</AddButton>
+      <AddButton onClick={() => handleAdd(bird, 1)}>+</AddButton>
     </Card>
   );
 }
