@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Header from "../components/header";
-// import CagedBird from "../components/cagedbird";
 import BirdCard from "../components/birdcard";
 
 export default function BirdCagePage({ birdcage, setBirdcage, handleAdd }) {

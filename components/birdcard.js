@@ -24,7 +24,7 @@ export default function BirdCard({ handleAdd, bird, birdcage }) {
       {!birdcage && <Wingspan>{bird.wingspan}</Wingspan>}
       {birdcage && (
         <p>
-          <strong>Quantity: {bird.quantity}</strong>
+          <strong>Quantity: {bird.quant}</strong>
         </p>
       )}
       <AddButton onClick={() => handleAdd(bird)}>+</AddButton>
