@@ -23,6 +23,7 @@ export default function Home({ allBirdsData, handleAdd }) {
           rel="stylesheet"
         />
       </Head>
+      <h1>Test</h1>
       <Header />
       <ViewBirds handleAdd={handleAdd} allBirdsData={allBirdsData} />
     </>
