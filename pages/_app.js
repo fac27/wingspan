@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GlobalStyle from "../styles/globalstyles";
 
 export default function MyApp({ Component, pageProps }) {
   const [totalBirdCount, setTotalBirdCount] = useState(0);
+  const [birdcage, setBirdcage] = useState([]);
+
   const handleAdd = (bird, quant) => {
     setBirdcage((prevCage) => {
       const birdInCage = prevCage.find((b) => b.id === bird.id);
@@ -15,14 +17,17 @@ export default function MyApp({ Component, pageProps }) {
         return [...prevCage, { ...bird, quantity: quant }];
       }
     });
+  };
+
+  useEffect(() => {
+    console.log("useEffect");
     setTotalBirdCount(() => {
       return birdcage.reduce((total, bird) => {
         return total + bird.quantity;
-      }, 1);
+      }, 0);
     });
-  };
+  }, [birdcage]);
 
-  const [birdcage, setBirdcage] = useState([]);
   const props = {
     ...pageProps,
     birdcage,
