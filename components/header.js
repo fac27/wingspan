@@ -40,7 +40,7 @@ const StyledHeading = styled.h1`
   margin-left: 40px;
   font-family: "Bebas Neue", sans-serif;
   line-height: 19px;
-  letter-spacing:4px;
+  letter-spacing: 4px;
 `;
 
 const StyledNav = styled.nav`

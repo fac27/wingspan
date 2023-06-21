@@ -1,6 +1,5 @@
 import { useState } from "react";
-import GlobalStyle from '../styles/globalstyles';
-
+import GlobalStyle from "../styles/globalstyles";
 
 export default function MyApp({ Component, pageProps }) {
   const handleAdd = () => {
