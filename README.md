@@ -9,33 +9,23 @@ This is the week 5 project of the FAC software developer apprenticeship. A Nextj
 
 1. Clone the repo
 
-```
-git clone https://github.com/fac27/wingspan
-```
+  ```git clone https://github.com/fac27/wingspan```
 
 2. Cd into the repo
 
-```
-cd wingspan
-```
+```cd wingspan```
 
 3. Install npm packages
 
-```
-npm install
-```
+```npm install```
 
 4. Seed the database
 
-```
-node database/seed.js
-```
+```node database/seed.js```
 
 5. Run the development server
 
-```
-npm run dev
-```
+```npm run dev```
 
 6. Navigate to http://localhost:3000/ in the browser
 
