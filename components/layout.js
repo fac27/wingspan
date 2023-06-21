@@ -4,7 +4,7 @@ import Head from "next/head";
 export default function Layout({ children, totalBirdCount }) {
   return (
     <>
-      <Head >
+      <Head>
         <title>Wingspan</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -12,7 +12,7 @@ export default function Layout({ children, totalBirdCount }) {
           rel="stylesheet"
         />
       </Head>
-      <Header totalBirdCount={totalBirdCount}/>
+      <Header totalBirdCount={totalBirdCount} />
       <main>{children}</main>
     </>
   );

@@ -21,7 +21,12 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Bird({ birdData, handleAdd, birdcage, totalBirdCount }) {
+export default function Bird({
+  birdData,
+  handleAdd,
+  birdcage,
+  totalBirdCount,
+}) {
   const [quant, setQuant] = useState(1);
 
   const handleQuantPlus = () => {
