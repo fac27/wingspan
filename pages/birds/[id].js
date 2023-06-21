@@ -39,14 +39,14 @@ export default function Bird({ birdData, handleAdd, birdcage }) {
 
       <div>
         <h2>{birdData.name}</h2>
-        <Image src="/someBirdImage" alt="bird image" width={123} height={123} />
+        <Image src={birdData.img_path} alt="bird image" width={123} height={123} />
         <p>{birdData.scientific_name}</p>
-        <p>{birdData.habitat}</p>
-        <p>{birdData.location}</p>
-        <p>{birdData.nest_type}</p>
+        <p>Habitat: {birdData.habitat}</p>
+        <p>Location: {birdData.location}</p>
+        <p>Nest type: {birdData.nest_type}</p>
         <p>{birdData.trivia}</p>
-        <p>{birdData.points}</p>
-        <p>{birdData.wingspan}</p>
+        <p>Bird points: {birdData.points}</p>
+        <p>Wingspan: {birdData.wingspan}</p>
         <div>
           <AddRemoveButton onClick={handleQuantMinus}>-</AddRemoveButton>
           {quant}
@@ -81,3 +81,4 @@ const AddRemoveButton = styled.button`
     box-shadow: 2px 5px #967a71;
   }
 `;
+

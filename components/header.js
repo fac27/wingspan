@@ -7,18 +7,19 @@ export default function Header() {
   return (
     <>
       <StyledHeader>
-        <StyledHeading>Wingspan</StyledHeading>
+        <Link href="/">
+          <StyledHeading>Wingspan</StyledHeading>
+        </Link>
         <StyledNav>
           <Link href="/bird-cage">
-            {" "}
-            <div>
+            {/* <div> */}
               <Image
                 src={birdcageIcon}
                 alt="birdcage icon"
                 width="35"
                 height="41"
               />
-            </div>
+            {/* </div> */}
           </Link>
         </StyledNav>
       </StyledHeader>
@@ -40,6 +41,7 @@ const StyledHeading = styled.h1`
   font-family: "Bebas Neue", sans-serif;
   line-height: 19px;
 `;
+
 
 const StyledNav = styled.nav`
   margin-right: 40px;
