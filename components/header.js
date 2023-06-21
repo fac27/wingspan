@@ -48,14 +48,13 @@ const StyledHeading = styled.h1`
 const LogoLink = styled(Link)`
   color: #507fb2;
   text-decoration: none;
-  
+
   &:visited {
     color: #e02d30;
     text-decoration: none;
   }
-  &:hover{
-    text-shadow: 2px 2px #F5b0b1;
-
+  &:hover {
+    text-shadow: 2px 2px #f5b0b1;
   }
 `;
 
