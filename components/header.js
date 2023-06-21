@@ -41,7 +41,16 @@ const StyledHeading = styled.h1`
   font-family: "Bebas Neue", sans-serif;
   line-height: 19px;
   letter-spacing: 4px;
+  :visited {
+  color: pink;
+}
 `;
+const LogoLink = styled(Link)`
+  :visited {
+  color: pink;
+}
+
+`
 
 const StyledNav = styled.nav`
   margin-right: 40px;
