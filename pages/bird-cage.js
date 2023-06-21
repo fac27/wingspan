@@ -33,12 +33,14 @@ export default function BirdCagePage({ birdcage, setBirdcage, handleAdd }) {
         return (
           <BirdCard
             handleAdd={handleAdd}
+            handleRemove={handleRemove}
             bird={bird}
             key={bird.id}
             birdcage={true}
           />
         );
       })}
+
       <div>
         <p>Total Wingspan: {total}</p>
       </div>
