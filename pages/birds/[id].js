@@ -23,7 +23,7 @@ export async function getStaticProps({ params }) {
 
 export default function Bird({ birdData, handleAdd, birdcage }) {
   const [quant, setQuant] = useState(1);
-  console.log({ birdcage });
+
   const handleQuantPlus = () => {
     setQuant((prevQuant) => prevQuant + 1);
   };
