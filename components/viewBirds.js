@@ -33,8 +33,6 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
             {habitat}
           </HabitatButton>
         ))}
-
-        
       </Filter>
       <BirdContainer>
         {filteredBirds.map((bird) => (
@@ -72,7 +70,7 @@ const HabitatButton = styled.button`
 `;
 
 const Filter = styled.form`
-display: flex;
-align-items: center;
-justify-content: center;
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
