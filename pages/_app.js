@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GlobalStyle from "../styles/globalstyles";
 
 export default function MyApp({ Component, pageProps }) {
   const handleAdd = (bird, quant) => {
@@ -14,8 +15,15 @@ export default function MyApp({ Component, pageProps }) {
       }
     });
   };
+
+  const [selectedHabitat, setSelectedHabitat] = useState(null);
   const [birdcage, setBirdcage] = useState([]);
   const props = { ...pageProps, birdcage, setBirdcage, handleAdd };
 
-  return <Component {...props} />;
+  return (
+    <>
+      <GlobalStyle />
+      <Component {...props} />;
+    </>
+  );
 }

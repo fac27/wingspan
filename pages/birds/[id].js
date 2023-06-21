@@ -2,6 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { getAllBirdIds, getBirdData } from "../../lib/birds";
+import Header from "../../components/header";
 import { styled } from "styled-components";
 
 export async function getStaticPaths() {
@@ -36,8 +37,8 @@ export default function Bird({ birdData, handleAdd, birdcage }) {
       <Head>
         <title>{birdData.scientific_name}</title>
       </Head>
-
-      <div>
+      <Header />
+      <Card>
         <h2>{birdData.name}</h2>
         <Image
           src={birdData.img_path}
@@ -57,16 +58,15 @@ export default function Bird({ birdData, handleAdd, birdcage }) {
           {quant}
           <AddRemoveButton onClick={handleQuantPlus}>+</AddRemoveButton>
         </div>
-        <button onClick={() => handleAdd(birdData, quant)}>
+        <AddToBasket onClick={() => handleAdd(birdData, quant)}>
           Add to Basket
-        </button>
-      </div>
+        </AddToBasket>
+      </Card>
     </>
   );
 }
 
 const AddRemoveButton = styled.button`
-  position: absolute;
   bottom: 20px;
   right: 20px;
   border-radius: 50%;
@@ -78,6 +78,8 @@ const AddRemoveButton = styled.button`
   border-color: white;
   border: solid white;
   color: #967a71;
+  margin-left: 5px;
+  margin-right: 5px;
 
   &:hover {
     background-color: #e0c9bc;
@@ -85,4 +87,33 @@ const AddRemoveButton = styled.button`
     cursor: pointer;
     box-shadow: 2px 5px #967a71;
   }
+`;
+
+const AddToBasket = styled.button`
+  border-radius: 50%;
+  font-size: 14px;
+  border-color: white;
+  border: solid white;
+  color: #967a71;
+  margin-top: 5px;
+
+  &:hover {
+    background-color: #e0c9bc;
+    color: grey;
+    cursor: pointer;
+    box-shadow: 2px 5px #967a71;
+  }
+`;
+
+const Card = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgba(224, 201, 188, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3);
 `;
