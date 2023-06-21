@@ -16,18 +16,6 @@ describe("wingspan routes", () => {
   });
 });
 
-
-
-
-
-
-/*describe("test wingspan", () => {
-  it("displays page populated with bird cards", () => {
-    cy.visit("http://localhost:3000/");
-    cy.contains("ViewBirds").should("exist");
-  });
-});*/
-
 // To run the test:
 
 // Make sure development server is running:
