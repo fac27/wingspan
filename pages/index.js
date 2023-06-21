@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Layout from "../components/layout";
 import { getAllBirds } from "../lib/birds";
 import ViewBirds from "../components/viewBirds";
 import Header from "../components/header";
@@ -15,17 +15,8 @@ export async function getStaticProps() {
 
 export default function Home({ allBirdsData, handleAdd, totalBirdCount }) {
   return (
-    <>
-      <Head >
-        <title>Homepage</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-      <Header totalBirdCount={totalBirdCount}/>
+    <Layout>
       <ViewBirds handleAdd={handleAdd} allBirdsData={allBirdsData} />
-    </>
+    </Layout>
   );
 }
