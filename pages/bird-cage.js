@@ -27,7 +27,6 @@ export default function BirdCagePage({
   }
 
   const total = totalWingspan();
-  console.log(totalBirdCount);
   return (
     <Layout totalBirdCount={totalBirdCount}>
       {birdcage.map((bird) => {
