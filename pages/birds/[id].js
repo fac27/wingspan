@@ -41,15 +41,10 @@ export default function Bird({ birdData, handleAdd, birdcage }) {
       <Card>
         <h2>{birdData.name}</h2>
         <Image
-         
           src={birdData.img_path}
-         
           alt="bird image"
-         
           width={123}
-         
           height={123}
-       
         />
         <p>{birdData.scientific_name}</p>
         <p>Habitat: {birdData.habitat}</p>
