@@ -21,12 +21,7 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
           <HabitatText>{bird.habitat}</HabitatText>
         </HabitatCard>
       )}
-      {!birdcage && <Wingspan>{bird.wingspan}</Wingspan>}
-      {birdcage && (
-        <p>
-          Wingspan: <strong>{bird.wingspan}</strong>
-        </p>
-      )}
+      <Wingspan birdcage={birdcage}>Wingspan: {bird.wingspan}cm</Wingspan>
       {birdcage && (
         <p>
           <strong>Quantity: {bird.quantity}</strong>
@@ -66,7 +61,7 @@ const BirdName = styled.h2`
 `;
 
 const Wingspan = styled.p`
-  position: absolute;
+  position: ${({ birdcage }) => (!birdcage ? "absolute" : "relative")};
   bottom: 0.5rem;
   color: #967a71;
 `;
