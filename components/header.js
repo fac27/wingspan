@@ -7,9 +7,9 @@ export default function Header() {
   return (
     <>
       <StyledHeader>
-        <Link href="/">
+        <LogoLink href="/">
           <StyledHeading>Wingspan</StyledHeading>
-        </Link>
+        </LogoLink>
         <StyledNav>
           <Link href="/bird-cage">
             {/* <div> */}
@@ -46,8 +46,16 @@ const StyledHeading = styled.h1`
   }
 `;
 const LogoLink = styled(Link)`
-  :visited {
-    color: pink;
+  color: #507fb2;
+  text-decoration: none;
+  
+  &:visited {
+    color: #e02d30;
+    text-decoration: none;
+  }
+  &:hover{
+    text-shadow: 2px 2px #F5b0b1;
+
   }
 `;
 
