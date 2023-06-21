@@ -3,7 +3,19 @@ import Header from "../components/header";
 // import CagedBird from "../components/cagedbird";
 import BirdCard from "../components/birdcard";
 
-export default function BirdCagePage({ birdcage, handleAdd }) {
+export default function BirdCagePage({ birdcage, setBirdcage, handleAdd }) {
+  const handleRemove = (bird) => {
+    if (bird.quantity === 1) {
+      setBirdcage((prevCage) => {
+        return prevCage.filter((b) => b.id !== bird.id);
+      });
+    }
+    setBirdcage((prevCage) => {
+      return prevCage.map((b) =>
+        b.id === bird.id ? { ...b, quantity: b.quantity - 1 } : b
+      );
+    });
+  };
   return (
     <>
       <Head>
