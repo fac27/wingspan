@@ -1,4 +1,6 @@
 import { useState } from "react";
+import GlobalStyle from '../styles/globalstyles';
+
 
 export default function MyApp({ Component, pageProps }) {
   const handleAdd = () => {
@@ -9,5 +11,10 @@ export default function MyApp({ Component, pageProps }) {
   const [birdcage, setBirdcage] = useState({ bird: 0 });
   const props = { ...pageProps, birdcage, setBirdcage, handleAdd };
 
-  return <Component {...props} />;
+  return (
+    <>
+      <GlobalStyle />
+      <Component {...props} />;
+    </>
+  );
 }
