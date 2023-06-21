@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function CagedBird({ handleAdd, bird }) {
+export default function CagedBird({ handleAdd, bird, handleRemove }) {
   return (
     <div>
       <h2>{bird.name}</h2>
@@ -8,7 +8,8 @@ export default function CagedBird({ handleAdd, bird }) {
       <p>
         <strong>Quantity: {bird.quantity}</strong>
       </p>
-      <button onClick={() => handleAdd(bird)}>Add</button>
+      <button onClick={() => handleRemove(bird)}>Remove</button>
+      <button onClick={() => handleAdd(bird, 1)}>Add</button>
     </div>
   );
 }
