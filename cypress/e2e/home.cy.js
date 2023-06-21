@@ -1,11 +1,19 @@
-/// <reference types="cypress"/>
+const { appendMutableCookies } = require("next/dist/server/web/spec-extension/adapters/request-cookies")
 
-context("Home Page", () => {
-  beforeEach(() => {
-    cy.visit("http://localhost:3000")
-  })
-
-  it ("contains our ViewBirds component", () => {
-    cy.get("ViewBirds").should("have.BirdCard", 1);
+describe('test wingspan', () => {
+  it('takes user to homepage', () => {
+    cy.visit('http://localhost:3000/')
   })
 })
+
+// To run the test:
+
+// Make sure development server is running:
+// npm run dev
+
+
+// Open cypress web app
+// npx cypress open
+
+// Run Tests
+

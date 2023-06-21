@@ -20,6 +20,7 @@ export default function Home({ allBirdsData, handleAdd, birdcage }) {
       <Head>
         <title>Homepage</title>
       </Head>
+      <h1>Test</h1>
       <Header />
       <ViewBirds handleAdd={handleAdd} allBirdsData={allBirdsData} />
     </>
