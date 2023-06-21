@@ -75,20 +75,19 @@ const AddButton = styled.button`
   }
 `;
 const StyledP = styled.p`
-  width: 60px; /* adjust as necessary */
-  height: 60px; /* adjust as necessary */
-  border-radius: 50%; /* this makes it round */
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%; 
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* this makes sure the text doesn't overflow the circle */
+  overflow: hidden;
   text-align: center;
   background: #276547;
-  // opacity: 0;  /* hides the text initially */
-  transition: opacity 0.3s; /* adds a transition effect */
+  transition: opacity 0.3s; 
 
   &:hover {
-    opacity: 1; /* shows the text on hover */
+    opacity: 1;
   }
 `;
 
