@@ -24,6 +24,11 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
       {!birdcage && <Wingspan>{bird.wingspan}</Wingspan>}
       {birdcage && (
         <p>
+          Wingspan: <strong>{bird.wingspan}</strong>
+        </p>
+      )}
+      {birdcage && (
+        <p>
           <strong>Quantity: {bird.quantity}</strong>
         </p>
       )}
