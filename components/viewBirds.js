@@ -4,7 +4,6 @@ import { styled } from "styled-components";
 export default function ViewBirds({ handleAdd, allBirdsData }) {
   return (
     <>
-      {/* <Header/> */}
       <BirdContainer>
         {allBirdsData.map((bird) => (
           <BirdCard handleAdd={handleAdd} key={bird.id} bird={bird}></BirdCard>

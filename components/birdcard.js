@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { styled } from "styled-components";
 
-export default function BirdCard({ handleAdd, bird }) {
+export default function BirdCard({ handleAdd, bird, birdcage }) {
   return (
     <Card>
       <BirdName>{bird.name}</BirdName>
@@ -11,12 +11,19 @@ export default function BirdCard({ handleAdd, bird }) {
         width={123}
         height={123}
       ></Image>
-      <p>{bird.scientific_name}</p>
-      <HabitatCard>
-        <HabitatIcon>H</HabitatIcon>
-        <HabitatText>{bird.habitat}</HabitatText>
-      </HabitatCard>
-      <Wingspan>{bird.wingspan}</Wingspan>
+      {!birdcage && <p>{bird.scientific_name}</p>}
+      {!birdcage && (
+        <HabitatCard>
+          <HabitatIcon>H</HabitatIcon>
+          <HabitatText>{bird.habitat}</HabitatText>
+        </HabitatCard>
+      )}
+      {!birdcage && <Wingspan>{bird.wingspan}</Wingspan>}
+      {birdcage && (
+        <p>
+          <strong>Quantity: {bird.quantity}</strong>
+        </p>
+      )}
       <AddButton onClick={() => handleAdd(bird)}>+</AddButton>
     </Card>
   );
