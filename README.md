@@ -32,10 +32,12 @@ This is the week 5 project of the FAC software developer apprenticeship. A Nextj
 
 ### User Stories
 
-- As a user I want to land on a page with images of birds (name, image) so that I can get an idea of what birds are on offer
-- As a user I want to be able to filter the original view of the birds so I can narrow my decision making (filter by habitat)
-- As a user I want to be able to select a bird to view more data so that I can get more information about the birds
-- As a use I want to be able to select a quantity of birds so that I can add them to my birdcage
+As a user, I want to...
+
+- land on a page with images of birds (name, image) so that I can get an idea of what birds are on offer
+- filter the original view of the birds so I can narrow my decision making (filter by habitat)
+- select a bird to view more data so that I can get more information about the birds
+- select a quantity of birds so that I can add them to my birdcage
 
 ## Design
 
