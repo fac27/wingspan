@@ -19,6 +19,18 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
       )
     : allBirdsData;
 
+    const wingspanArr = [];
+    allBirdsData.forEach(bird => wingspanArr.push(bird.wingspan))
+    console.log(wingspanArr)
+
+    const largestWingspan = Math.ceil(Math.max(...wingspanArr));
+    const smallestWingspan = Math.floor(Math.min(...wingspanArr));
+
+    console.log(largestWingspan, smallestWingspan)
+
+
+
+
   return (
     <>
       <Filter>
@@ -38,6 +50,9 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
             {habitat}
           </HabitatButton>
         ))}
+        <WingspanFilter>
+          <p>Wingspan</p><input type="range" min="23" max="190"></input>
+          </WingspanFilter>
       </Filter>
       <BirdContainer>
         {filteredBirds.map((bird) => (
@@ -73,6 +88,16 @@ const HabitatButton = styled.button`
     box-shadow: 2px 2px #967a71;
   }
 `;
+
+const WingspanFilter = styled.div`
+border-radius: 10px;
+background-color: #a4e2c5;
+font-family: "Bebas Neue", sans-serif;
+letter-spacing: 2px;
+width:150px
+padding: 10px;
+text-align: center;
+`
 
 const Filter = styled.form`
   display: flex;
