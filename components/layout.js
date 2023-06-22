@@ -1,7 +1,7 @@
 import Header from "./header";
 import Head from "next/head";
 
-export default function Layout({ children }) {
+export default function Layout({ children, totalBirdCount }) {
   return (
     <>
       <Head>
@@ -12,7 +12,7 @@ export default function Layout({ children }) {
           rel="stylesheet"
         />
       </Head>
-      <Header />
+      <Header totalBirdCount={totalBirdCount} />
       <main>{children}</main>
     </>
   );
