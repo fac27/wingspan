@@ -77,4 +77,5 @@ const CageNumber = styled.span`
   color: white;
   opacity: 80%;
   font-family: "Bebas Neue", sans-serif;
+  pointer-events: none;
 `;
