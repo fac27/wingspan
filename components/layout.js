@@ -1,5 +1,7 @@
 import Header from "./header";
 import Head from "next/head";
+import { styled } from "styled-components";
+
 
 export default function Layout({ children, totalBirdCount }) {
   return (
@@ -13,7 +15,18 @@ export default function Layout({ children, totalBirdCount }) {
         />
       </Head>
       <Header totalBirdCount={totalBirdCount} />
-      <main>{children}</main>
+      <StyledLayout>{children}</StyledLayout>
     </>
   );
 }
+
+const StyledLayout = styled.main`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+`;

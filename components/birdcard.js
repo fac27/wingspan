@@ -45,6 +45,7 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
 }
 
 const Card = styled.div`
+  font-family: "HelveticaNeue-Light";
   position: relative;
   display: flex;
   flex-direction: column;
@@ -60,8 +61,8 @@ const Card = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3);
 `;
 const BirdName = styled.h2`
-  font-family: "Lobster";
-  font-style: normal;
+  font-family: "HelveticaNeue-Light";
+  font-style: bold;
   font-weight: 400;
   line-height: 15px;
   text-align: center;
@@ -120,17 +121,20 @@ const HabitatIcon = styled.div`
 
 const HabitatText = styled.p`
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.8);
+  margin-top: 8px;
   width: fit-content;
   padding: 8px 8px;
   border-radius: 4px;
   visibility: hidden;
 `;
 const HabitatCard = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
   margin: 16px;
   & ${HabitatIcon}:hover + ${HabitatText} {
     visibility: visible;
-    color: #fff;
+    color: #967a71;
     width: fit-content;
     padding: 8px 8px;
     border-radius: 4px;

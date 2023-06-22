@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
 import BirdCard from "../components/birdcard";
+import { styled } from "styled-components";
 
 export default function BirdCagePage({
   birdcage,
@@ -41,9 +42,18 @@ export default function BirdCagePage({
         );
       })}
 
-      <div>
+      <StyledWingspan>
         <p data-testid="wingpsan-total">Total Wingspan: {total}</p>
-      </div>
+      </StyledWingspan>
     </Layout>
   );
 }
+
+const StyledWingspan = styled.div`
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+`;
