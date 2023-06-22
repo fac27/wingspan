@@ -14,18 +14,7 @@ export default function Layout({ children, totalBirdCount }) {
         />
       </Head>
       <Header totalBirdCount={totalBirdCount} />
-      <StyledLayout>{children}</StyledLayout>
+      <main>{children}</main>
     </>
   );
 }
-
-const StyledLayout = styled.main`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 0 auto;
-`;
