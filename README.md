@@ -4,31 +4,29 @@
 
 This is the week 5 project of the FAC software developer apprenticeship. A Nextjs full-stack application for collecting birds inspired by the game [wingspan](https://stonemaiergames.com/games/wingspan/).
 
-
 ## Installation
 
 1. Clone the repo
 
-  ```git clone https://github.com/fac27/wingspan```
+`git clone https://github.com/fac27/wingspan`
 
 2. Cd into the repo
 
-```cd wingspan```
+`cd wingspan`
 
 3. Install npm packages
 
-```npm install --force```
+`npm install --force`
 
 4. Seed the database
 
-```node database/seed.js```
+`node database/seed.js`
 
 5. Run the development server
 
-```npm run dev```
+`npm run dev`
 
 6. Navigate to http://localhost:3000/ in the browser
-
 
 ### User Stories
 
@@ -54,7 +52,6 @@ Wireframes were created using figma and can be found [HERE](https://www.figma.co
 - Deployment
   This is because Next.js's Vercel doesn't play nice with sqlite (a requirement of the project)
 
-
 ## Testing
 
 E2E tests were created with [Cypress](https://docs.cypress.io/guides/overview/why-cypress)
@@ -62,14 +59,13 @@ E2E tests were created with [Cypress](https://docs.cypress.io/guides/overview/wh
 To run the tests:
 
 Make sure development server is running
-```npm run dev```
+`npm run dev`
 
-Open cypress application 
-```npx cypress open```
+Open cypress application
+`npx cypress open`
 
 Select E2E Testing in the application
 
 Select chrome as your browser
 
 Run Tests
-
