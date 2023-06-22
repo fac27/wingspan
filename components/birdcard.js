@@ -8,7 +8,7 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
       <BirdName>{bird.name}</BirdName>
       <Link href={"/birds/" + bird.id}>
         <Image
-          data-testid="view-bird" 
+          data-testid="view-bird"
           src={bird.img_path}
           alt="bird image"
           width={123}
