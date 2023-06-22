@@ -21,7 +21,12 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Bird({ birdData, handleAdd, birdcage }) {
+export default function Bird({
+  birdData,
+  handleAdd,
+  birdcage,
+  totalBirdCount,
+}) {
   const [quant, setQuant] = useState(1);
 
   const handleQuantPlus = () => {
@@ -32,7 +37,7 @@ export default function Bird({ birdData, handleAdd, birdcage }) {
     setQuant((prevQuant) => prevQuant - 1);
   };
   return (
-    <Layout>
+    <Layout totalBirdCount={totalBirdCount}>
       <Card>
         <h2>{birdData.name}</h2>
         <Image

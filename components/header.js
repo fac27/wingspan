@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import birdcageIcon from "../public/images/birdcageIcon.png";
 import Link from "next/link";
 
-export default function Header() {
+export default function Header({ totalBirdCount }) {
   return (
     <>
       <StyledHeader>
@@ -12,16 +12,15 @@ export default function Header() {
         </LogoLink>
         <StyledNav>
           <Link href="/bird-cage">
-            {/* <div> */}
-            <Image
+            <CageIcon
               src={birdcageIcon}
               alt="birdcage icon"
               width="35"
               height="41"
               data-testid="bird-cage"
             />
-            {/* </div> */}
           </Link>
+          <CageNumber>{totalBirdCount}</CageNumber>
         </StyledNav>
       </StyledHeader>
     </>
@@ -58,7 +57,24 @@ const LogoLink = styled(Link)`
     text-shadow: 2px 2px #f5b0b1;
   }
 `;
+const CageIcon = styled(Image)`
+  &:hover {
+    opacity: 60%;
+    cursor: pointer;
+  }
+`;
 
 const StyledNav = styled.nav`
   margin-right: 40px;
+`;
+
+const CageNumber = styled.span`
+  position: absolute;
+  top: 90px;
+  right: 50px;
+  font-size: 20px;
+  z-index: 0;
+  color: white;
+  opacity: 80%;
+  font-family: "Bebas Neue", sans-serif;
 `;
