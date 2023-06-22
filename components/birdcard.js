@@ -128,9 +128,9 @@ const HabitatText = styled.p`
   visibility: hidden;
 `;
 const HabitatCard = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 16px;
   & ${HabitatIcon}:hover + ${HabitatText} {
     visibility: visible;

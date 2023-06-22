@@ -56,7 +56,7 @@ const BirdContainer = styled.div`
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  margin: 0 auto; 
+  margin: 0 auto;
 `;
 const HabitatButton = styled.button`
   border-radius: 10px;
