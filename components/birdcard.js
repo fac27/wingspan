@@ -8,7 +8,7 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
       <BirdName>{bird.name}</BirdName>
       <Link href={"/birds/" + bird.id}>
         <Image
-          data-testid="view-bird" 
+          data-testid="view-bird"
           src={bird.img_path}
           alt="bird image"
           width={123}
@@ -18,14 +18,16 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
       {!birdcage && <p>{bird.scientific_name}</p>}
       {!birdcage && (
         <HabitatCard>
-          <HabitatIcon>H</HabitatIcon>
+          <HabitatIcon habitat={bird.habitat}>
+            <img src="/images/habitat.png"></img>
+          </HabitatIcon>
           <HabitatText>{bird.habitat}</HabitatText>
         </HabitatCard>
       )}
       <Wingspan birdcage={birdcage}>Wingspan: {bird.wingspan}cm</Wingspan>
       {birdcage && (
         <p>
-          <strong>Quantity: {bird.quantity}</strong>
+          <StyledQuantity>Quantity: {bird.quantity}</StyledQuantity>
         </p>
       )}
       {birdcage && (
@@ -44,6 +46,7 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
 }
 
 const Card = styled.div`
+  font-family: "HelveticaNeue-Light";
   position: relative;
   display: flex;
   flex-direction: column;
@@ -59,8 +62,8 @@ const Card = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3);
 `;
 const BirdName = styled.h2`
-  font-family: "Lobster";
-  font-style: normal;
+  font-family: "HelveticaNeue-Light";
+  font-style: bold;
   font-weight: 400;
   line-height: 15px;
   text-align: center;
@@ -102,7 +105,12 @@ const RemoveButton = styled(AddButton)`
 `;
 
 const HabitatIcon = styled.div`
-  background: #276547;
+  background: ${(props) =>
+    props.habitat === "forest"
+      ? "#276547"
+      : props.habitat === "grassland"
+      ? "#aa624d;"
+      : "#5372a0"};
   color: #fff;
   height: 45px;
   width: 45px;
@@ -111,21 +119,35 @@ const HabitatIcon = styled.div`
   border-radius: 50%;
   cursor: pointer;
 `;
+
 const HabitatText = styled.p`
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.8);
+  margin-top: 8px;
   width: fit-content;
   padding: 8px 8px;
   border-radius: 4px;
   visibility: hidden;
 `;
 const HabitatCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 16px;
   & ${HabitatIcon}:hover + ${HabitatText} {
     visibility: visible;
-    color: #fff;
+    color: #967a71;
     width: fit-content;
     padding: 8px 8px;
     border-radius: 4px;
   }
+`;
+
+const leafIcon = styled.img`
+  height: 45px;
+  width: 45px;
+`;
+
+const StyledQuantity = styled.strong`
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
 `;

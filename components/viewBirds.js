@@ -70,9 +70,11 @@ const StyledBirdContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  margin: 0 auto;
 `;
 const StyledHabitatButton = styled.button`
   border-radius: 10px;

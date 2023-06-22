@@ -15,4 +15,3 @@ describe("wingspan routes", () => {
     cy.visit("http://localhost:3000/bird-cage");
   });
 });
-
