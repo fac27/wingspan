@@ -31,6 +31,7 @@ export default function BirdCagePage({
 
   return (
     <Layout totalBirdCount={totalBirdCount}>
+      <StyledContainer>
       {birdcage.length === 0 && <StyledH2>Nothing in the birdcage</StyledH2>}
       {birdcage.map((bird) => {
         return (
@@ -44,12 +45,24 @@ export default function BirdCagePage({
         );
       })}
 
+      </StyledContainer>
+      
       <StyledTotal>
         <p data-testid="wingpsan-total">Total Wingspan: {total}</p>
       </StyledTotal>
     </Layout>
   );
 }
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+`;
 
 const StyledH2 = styled.h2`
   text-align: center;
@@ -62,7 +75,7 @@ const StyledTotal = styled.div`
   bottom: 0;
   left: 0;
   text-align: center;
-  margin: 10px;
+  margin: 0;
   padding: 10px;
   width: 100%;
   background-color: rgba(224, 201, 188, 0.9);
