@@ -55,7 +55,6 @@ const StyledH2 = styled.h2`
   text-align: center;
   color: grey;
   font-family: "Bebas Neue", sans-serif;
-;
 `;
 
 const StyledTotal = styled.div`

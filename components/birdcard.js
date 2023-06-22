@@ -150,5 +150,4 @@ const leafIcon = styled.img`
 const StyledQuantity = styled.strong`
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 2px;
-
-`
+`;
