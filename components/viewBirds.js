@@ -3,7 +3,6 @@ import BirdCard from "./birdcard.js";
 import { styled } from "styled-components";
 
 export default function ViewBirds({ handleAdd, allBirdsData }) {
-  /////////////////////////////////HABITAT
   const allHabitats = allBirdsData.flatMap((bird) => bird.habitat.split(", "));
   const uniqueHabitats = [...new Set(allHabitats)].filter(
     (habitat) => habitat !== "forest, grassland, wetland"
@@ -14,18 +13,12 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
     setSelectedHabitat(habitat);
   };
 
-  ///////////////////////////////WINGSPAN
   const wingspanArr = [];
   allBirdsData.forEach((bird) => wingspanArr.push(bird.wingspan));
   const largestWingspan = Math.max(...wingspanArr);
   const smallestWingspan = Math.min(...wingspanArr);
-
+  
   const [minWingspan, setMinWingspan] = useState(smallestWingspan);
-  const updateMinWingspan = (e) => {
-    return setMinWingspan(e.target.value);
-  };
-
-  ////////////////////////////APPLY FILTERS
   const filteredBirds = allBirdsData.filter((bird) => {
     const habitatFilter = selectedHabitat
       ? bird.habitat.split(", ").includes(selectedHabitat)
@@ -36,44 +29,44 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
 
   return (
     <>
-      <Filter>
-        <HabitatButton
+      <StyledFilter>
+        <StyledHabitatButton
           key="all"
           onClick={() => handleClick(null)}
           type="button"
         >
           All
-        </HabitatButton>
+        </StyledHabitatButton>
         {uniqueHabitats.map((habitat) => (
-          <HabitatButton
+          <StyledHabitatButton
             key={habitat}
             onClick={() => handleClick(habitat)}
             type="button"
           >
             {habitat}
-          </HabitatButton>
+          </StyledHabitatButton>
         ))}
-        <WingspanFilter>
-          <WingspanLabel>Wingspan</WingspanLabel>
+        <StyledWingspanFilter>
+          <StyledWingspanLabel>Wingspan</StyledWingspanLabel>
           <input
             type="range"
             step={(largestWingspan - 20 - smallestWingspan) / 8}
             min={0}
             max={largestWingspan}
-            onChange={updateMinWingspan}
+            onChange={(e) => setMinWingspan(e.target.value)}
           ></input>
-        </WingspanFilter>
-      </Filter>
-      <BirdContainer>
+        </StyledWingspanFilter>
+      </StyledFilter>
+      <StyledBirdContainer>
         {filteredBirds.map((bird) => (
           <BirdCard handleAdd={handleAdd} key={bird.id} bird={bird}></BirdCard>
         ))}
-      </BirdContainer>
+      </StyledBirdContainer>
     </>
   );
 }
 
-const BirdContainer = styled.div`
+const StyledBirdContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -81,7 +74,7 @@ const BirdContainer = styled.div`
   margin-right: auto;
   width: 90%;
 `;
-const HabitatButton = styled.button`
+const StyledHabitatButton = styled.button`
   border-radius: 10px;
   background-color: #a4e2c5;
   text-decoration: none;
@@ -99,7 +92,7 @@ const HabitatButton = styled.button`
   }
 `;
 
-const WingspanFilter = styled.div`
+const StyledWingspanFilter = styled.div`
   border-radius: 10px;
   background-color: #a4e2c5;
   font-family: "Bebas Neue", sans-serif;
@@ -110,12 +103,12 @@ const WingspanFilter = styled.div`
   height: 60px;
 `;
 
-const WingspanLabel = styled.p`
+const StyledWingspanLabel = styled.p`
   margin-top: 10px;
   margin-bottom: 0px;
 `;
 
-const Filter = styled.form`
+const StyledFilter = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
