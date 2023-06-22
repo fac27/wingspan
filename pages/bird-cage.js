@@ -28,8 +28,10 @@ export default function BirdCagePage({
   }
 
   const total = totalWingspan();
+
   return (
     <Layout totalBirdCount={totalBirdCount}>
+      {birdcage.length === 0 && <StyledH2>Nothing in the birdcage</StyledH2>}
       {birdcage.map((bird) => {
         return (
           <BirdCard
@@ -48,6 +50,11 @@ export default function BirdCagePage({
     </Layout>
   );
 }
+
+const StyledH2 = styled.h2`
+  text-align: center;
+  color: grey;
+`;
 
 const StyledTotal = styled.div`
   margin: 10px;
