@@ -17,7 +17,7 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
   allBirdsData.forEach((bird) => wingspanArr.push(bird.wingspan));
   const largestWingspan = Math.max(...wingspanArr);
   const smallestWingspan = Math.min(...wingspanArr);
-  
+
   const [minWingspan, setMinWingspan] = useState(smallestWingspan);
   const filteredBirds = allBirdsData.filter((bird) => {
     const habitatFilter = selectedHabitat
