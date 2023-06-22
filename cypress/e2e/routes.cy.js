@@ -16,14 +16,3 @@ describe("wingspan routes", () => {
   });
 });
 
-// To run the test:
-
-// Make sure development server is running:
-// npm run dev
-
-// Open cypress web app
-// npx cypress open
-
-// Select the E2E Testing card in the web app
-// Select chrome as your browser
-//Run Tests
