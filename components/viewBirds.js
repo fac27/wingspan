@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 
 export default function ViewBirds({ handleAdd, allBirdsData }) {
   const allHabitats = allBirdsData.flatMap((bird) => bird.habitat.split(", "));
-  const uniqueHabitats = [...new Set(allHabitats)]
+  const uniqueHabitats = [...new Set(allHabitats)];
   const [selectedHabitat, setSelectedHabitat] = useState(null);
 
   const handleClick = (habitat) => {

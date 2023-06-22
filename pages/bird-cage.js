@@ -32,21 +32,20 @@ export default function BirdCagePage({
   return (
     <Layout totalBirdCount={totalBirdCount}>
       <StyledContainer>
-      {birdcage.length === 0 && <StyledH2>Nothing in the birdcage</StyledH2>}
-      {birdcage.map((bird) => {
-        return (
-          <BirdCard
-            handleAdd={handleAdd}
-            handleRemove={handleRemove}
-            bird={bird}
-            key={bird.id}
-            birdcage={true}
-          />
-        );
-      })}
-
+        {birdcage.length === 0 && <StyledH2>Nothing in the birdcage</StyledH2>}
+        {birdcage.map((bird) => {
+          return (
+            <BirdCard
+              handleAdd={handleAdd}
+              handleRemove={handleRemove}
+              bird={bird}
+              key={bird.id}
+              birdcage={true}
+            />
+          );
+        })}
       </StyledContainer>
-      
+
       <StyledTotal>
         <p data-testid="wingpsan-total">Total Wingspan: {total}</p>
       </StyledTotal>
