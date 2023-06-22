@@ -13,42 +13,60 @@ export default function ViewBirds({ handleAdd, allBirdsData }) {
     setSelectedHabitat(habitat);
   };
 
-  const filteredBirds = selectedHabitat
-    ? allBirdsData.filter((bird) =>
-        bird.habitat.split(", ").includes(selectedHabitat)
-      )
-    : allBirdsData;
+  const wingspanArr = [];
+  allBirdsData.forEach((bird) => wingspanArr.push(bird.wingspan));
+  const largestWingspan = Math.max(...wingspanArr);
+  const smallestWingspan = Math.min(...wingspanArr);
+
+  const [minWingspan, setMinWingspan] = useState(smallestWingspan);
+  const filteredBirds = allBirdsData.filter((bird) => {
+    const habitatFilter = selectedHabitat
+      ? bird.habitat.split(", ").includes(selectedHabitat)
+      : allBirdsData;
+    const wingspanFilter = bird.wingspan > minWingspan;
+    return habitatFilter && wingspanFilter;
+  });
 
   return (
     <>
-      <Filter>
-        <HabitatButton
+      <StyledFilter>
+        <StyledHabitatButton
           key="all"
           onClick={() => handleClick(null)}
           type="button"
         >
           All
-        </HabitatButton>
+        </StyledHabitatButton>
         {uniqueHabitats.map((habitat) => (
-          <HabitatButton
+          <StyledHabitatButton
             key={habitat}
             onClick={() => handleClick(habitat)}
             type="button"
           >
             {habitat}
-          </HabitatButton>
+          </StyledHabitatButton>
         ))}
-      </Filter>
-      <BirdContainer>
+        <StyledWingspanFilter>
+          <StyledWingspanLabel>Wingspan</StyledWingspanLabel>
+          <input
+            type="range"
+            step={(largestWingspan - 20 - smallestWingspan) / 8}
+            min={0}
+            max={largestWingspan}
+            onChange={(e) => setMinWingspan(e.target.value)}
+          ></input>
+        </StyledWingspanFilter>
+      </StyledFilter>
+      <StyledBirdContainer>
         {filteredBirds.map((bird) => (
           <BirdCard handleAdd={handleAdd} key={bird.id} bird={bird}></BirdCard>
         ))}
-      </BirdContainer>
+      </StyledBirdContainer>
     </>
   );
 }
 
-const BirdContainer = styled.div`
+const StyledBirdContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -58,7 +76,7 @@ const BirdContainer = styled.div`
   margin-right: auto;
   margin: 0 auto;
 `;
-const HabitatButton = styled.button`
+const StyledHabitatButton = styled.button`
   border-radius: 10px;
   background-color: #a4e2c5;
   text-decoration: none;
@@ -76,7 +94,23 @@ const HabitatButton = styled.button`
   }
 `;
 
-const Filter = styled.form`
+const StyledWingspanFilter = styled.div`
+  border-radius: 10px;
+  background-color: #a4e2c5;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 10px;
+  height: 60px;
+`;
+
+const StyledWingspanLabel = styled.p`
+  margin-top: 10px;
+  margin-bottom: 0px;
+`;
+
+const StyledFilter = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -28,8 +28,10 @@ export default function BirdCagePage({
   }
 
   const total = totalWingspan();
+
   return (
     <Layout totalBirdCount={totalBirdCount}>
+      {birdcage.length === 0 && <StyledH2>Nothing in the birdcage</StyledH2>}
       {birdcage.map((bird) => {
         return (
           <BirdCard
@@ -42,18 +44,28 @@ export default function BirdCagePage({
         );
       })}
 
-      <StyledWingspan>
+      <StyledTotal>
         <p data-testid="wingpsan-total">Total Wingspan: {total}</p>
-      </StyledWingspan>
+      </StyledTotal>
     </Layout>
   );
 }
 
-const StyledWingspan = styled.div`
+const StyledH2 = styled.h2`
+  text-align: center;
+  color: grey;
+`;
+
+const StyledTotal = styled.div`
   position: relative;
   bottom: 0;
   left: 0;
-  width: 100%;
-  padding: 20px;
   text-align: center;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  background-color: rgba(224, 201, 188, 0.9);
+  border-radius: 5px;
+  font-size: 1.2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3);
 `;
