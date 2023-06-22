@@ -54,6 +54,8 @@ export default function BirdCagePage({
 const StyledH2 = styled.h2`
   text-align: center;
   color: grey;
+  font-family: "Bebas Neue", sans-serif;
+;
 `;
 
 const StyledTotal = styled.div`
@@ -67,5 +69,7 @@ const StyledTotal = styled.div`
   background-color: rgba(224, 201, 188, 0.9);
   border-radius: 5px;
   font-size: 1.2rem;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3);
 `;

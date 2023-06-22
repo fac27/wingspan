@@ -27,7 +27,7 @@ export default function BirdCard({ handleAdd, handleRemove, bird, birdcage }) {
       <Wingspan birdcage={birdcage}>Wingspan: {bird.wingspan}cm</Wingspan>
       {birdcage && (
         <p>
-          <strong>Quantity: {bird.quantity}</strong>
+          <StyledQuantity>Quantity: {bird.quantity}</StyledQuantity>
         </p>
       )}
       {birdcage && (
@@ -146,3 +146,9 @@ const leafIcon = styled.img`
   height: 45px;
   width: 45px;
 `;
+
+const StyledQuantity = styled.strong`
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
+
+`
