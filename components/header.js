@@ -71,11 +71,11 @@ const StyledNav = styled.nav`
 const CageNumber = styled.span`
   position: absolute;
   top: 90px;
-  right: 50px;
-  font-size: 20px;
+  right: 53px;
+  font-size: 23px;
   z-index: 0;
   color: white;
-  opacity: 80%;
+  opacity: 90%;
   font-family: "Bebas Neue", sans-serif;
   pointer-events: none;
 `;
