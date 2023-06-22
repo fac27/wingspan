@@ -1,6 +1,7 @@
 import Layout from "../components/layout";
 import { getAllBirds } from "../lib/birds";
 import ViewBirds from "../components/viewBirds";
+import { totalBirdCount } from "../pages/bird-cage";
 
 export async function getStaticProps() {
   const allBirdsData = getAllBirds();
@@ -11,9 +12,9 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allBirdsData, handleAdd }) {
+export default function Home({ allBirdsData, handleAdd, totalBirdCount }) {
   return (
-    <Layout>
+    <Layout totalBirdCount={totalBirdCount}>
       <ViewBirds handleAdd={handleAdd} allBirdsData={allBirdsData} />
     </Layout>
   );

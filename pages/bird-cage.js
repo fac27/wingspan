@@ -1,7 +1,12 @@
 import Layout from "../components/layout";
 import BirdCard from "../components/birdcard";
 
-export default function BirdCagePage({ birdcage, setBirdcage, handleAdd }) {
+export default function BirdCagePage({
+  birdcage,
+  setBirdcage,
+  handleAdd,
+  totalBirdCount,
+}) {
   const handleRemove = (bird) => {
     if (bird.quantity === 1) {
       setBirdcage((prevCage) => {
@@ -20,9 +25,10 @@ export default function BirdCagePage({ birdcage, setBirdcage, handleAdd }) {
       return total + bird.wingspan * bird.quantity;
     }, 0);
   }
+
   const total = totalWingspan();
   return (
-    <Layout>
+    <Layout totalBirdCount={totalBirdCount}>
       {birdcage.map((bird) => {
         return (
           <BirdCard
