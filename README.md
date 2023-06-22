@@ -59,13 +59,15 @@ E2E tests were created with [Cypress](https://docs.cypress.io/guides/overview/wh
 To run the tests:
 
 Make sure development server is running
-`npm run dev`
+```npm run dev```
+Run the tests in the terminal
+```npx cypress run```
 
+Alternatively:
+Make sure development server is running
+```npm run dev```
 Open cypress application
-`npx cypress open`
-
+```npx cypress open```
 Select E2E Testing in the application
-
 Select chrome as your browser
-
-Run Tests
+Select the spec you wish to run
